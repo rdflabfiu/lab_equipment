@@ -1,0 +1,104 @@
+Part number,Item description,Status,Unit price,Quantity,Subtotal,Currency code
+CE-CA-018-5000,"M12 End-Stop Extension Cable, 5m",in_stock,34.68,2,69.36,USD
+CE-CA-020-5000,"Extension Cable for Stepper Motors, 5m",deprecated,113.31,2,226.62,USD
+CE-CA-022-5000,"MachineMotion Control Device Extension Cable, 5m",in_stock,48.98,2,97.96,USD
+CE-CL-005-0003,MachineMotion 1,deprecated,2521.43,2,5042.86,USD
+CE-SA-003-0000,E-Stop Module 1,deprecated,228.55,1,228.55,USD
+CE-SN-002-0001__2,Hollow Shaft Optical Rotary Encoder,deprecated,275.83,2,551.66,USD
+CE-SN-004-0001,Non-Flush Inductive Proximity Sensor,in_stock,83.56,4,334.24,USD
+CE-SW-001-0003,MachineLogic for Universal Robots,deprecated,1839.23,2,3678.46,USD
+HW-CS-001-0001,High Strength Threadlocker (10 ml),in_stock,22.39,1,22.39,USD
+HW-CS-002-0001,High Performance Synthetic Grease,in_stock,12.2,1,12.20,USD
+HW-EC-001-0001__2,"45x45mm Plastic End Cap, for Extrusions",in_stock,2.27,6,13.62,USD
+HW-EC-002-0001__2,"45x90mm Plastic End Cap, for Extrusions",in_stock,3.82,35,133.70,USD
+HW-HD-001-0001,Die-cast Aluminum Handle,deprecated,6.87,2,13.74,USD
+HW-LT-002-0001,Spring-Loaded Grab Catch,in_stock,37.63,1,37.63,USD
+HW-TL-001-0000,Extrusion Tapping Kit,in_stock,99.43,1,99.43,USD
+HW-TL-004-0001,Rack and Pinion Installation Tool,in_stock,26.25,1,26.25,USD
+HW-TL-005-0001,Compact Grease Gun for Grease Tube,in_stock,15.8,1,15.80,USD
+HW-TW-001-0001,Screw-in Cable Tie Mount,in_stock,2.14,50,107.00,USD
+HW-TW-002-0001,5mm x 250mm Cable Tie (bag of 25) ,in_stock,5.17,4,20.68,USD
+MO-DC-002-0765,71mm Wide Cable Drag Chain (782mm),in_stock,98.81,2,197.62,USD
+MO-DC-002-1845,71mm Wide Cable Drag Chain (1886mm),in_stock,173.93,2,347.86,USD
+MO-LM-001-0032,90x112.5mm Gantry Plate,in_stock,57.96,8,463.68,USD
+MO-LM-010-0001,16mm Linear Bearing with Housing,in_stock,98.74,8,789.92,USD
+MO-LM-014-0855,16mm Shaft for Linear Bearings (855mm),in_stock,292.66,4,1170.64,USD
+MO-LM-014-2295,16mm Shaft for Linear Bearings (2295mm),in_stock,539.12,8,4312.96,USD
+MO-LM-019-0001,"Rack and Pinion, Housing and Pinion Assembly",in_stock,748.67,2,1497.34,USD
+MO-LM-019-0005__2,Left Rack & Pinion End Stop,in_stock,38.94,2,77.88,USD
+MO-LM-019-0007,Right Rack & Pinion End Stop,in_stock,38.94,2,77.88,USD
+MO-LM-020-0540,"Gear Rack, 540mm",in_stock,150.78,4,603.12,USD
+MO-LM-020-0810,"Gear Rack, 810mm",in_stock,198.92,10,1989.20,USD
+MO-SM-001-0001,156mm NEMA 34 Stepper Motor,deprecated,282.22,2,564.44,USD
+ST-EXT-001-0090,45x45mm (90mm) Aluminum Extrusion,in_stock,6.7,3,20.10,USD
+ST-EXT-001-0135,45x45mm (135mm) Aluminum Extrusion,in_stock,6.7,1,6.70,USD
+ST-EXT-001-0180,45x45mm (180mm) Aluminum Extrusion,in_stock,6.7,1,6.70,USD
+ST-EXT-001-0540,45x45mm (540mm) Aluminum Extrusion,in_stock,13.38,3,40.14,USD
+ST-EXT-001-0585,45x45mm (585mm) Aluminum Extrusion,in_stock,14.5,3,43.50,USD
+ST-EXT-001-1350,45x45mm (1350mm) Aluminum Extrusion,in_stock,33.45,1,33.45,USD
+ST-EXT-001-2115,45x45mm (2115mm) Aluminum Extrusion,in_stock,52.41,4,209.64,USD
+ST-EXT-002-0090,45x90mm (90mm) Aluminum Extrusion,in_stock,9.21,4,36.84,USD
+ST-EXT-002-0135,45x90mm (135mm) Aluminum Extrusion,in_stock,9.21,2,18.42,USD
+ST-EXT-002-0270,45x90mm (270mm) Aluminum Extrusion,in_stock,16.43,2,32.86,USD
+ST-EXT-002-0315,45x90mm (315mm) Aluminum Extrusion,in_stock,18.75,3,56.25,USD
+ST-EXT-002-0360,45x90mm (360mm) Aluminum Extrusion,in_stock,21.06,9,189.54,USD
+ST-EXT-002-0495,45x90mm (495mm) Aluminum Extrusion,in_stock,28.02,4,112.08,USD
+ST-EXT-002-0945,45x90mm (945mm) Aluminum Extrusion,in_stock,51.19,2,102.38,USD
+ST-EXT-002-1890,45mmx90mm (1890mm) Aluminum Extrusion,in_stock,99.68,4,398.72,USD
+ST-EXT-002-2295,45x90mm (2295mm) Aluminum Extrusion,in_stock,120.72,4,482.88,USD
+ST-EXT-002-3330,45x90mm (3330mm) Aluminum Extrusion,in_stock,175.16,4,700.64,USD
+ST-EXT-005-0135,90x90mm (135mm) Aluminum Extrusion,in_stock,14.28,2,28.56,USD
+ST-EXT-005-0630,90x90mm (630mm) Aluminum Extrusion,in_stock,58.47,4,233.88,USD
+ST-EXT-005-0810,90x90mm (810mm) Aluminum Extrusion,in_stock,74.39,6,446.34,USD
+ST-EXT-005-0945,90x90mm (945mm) Aluminum Extrusion,in_stock,86.33,6,517.98,USD
+ST-EXT-005-1890,90x90mm (1890mm) Aluminum Extrusion,in_stock,169.69,12,2036.28,USD
+ST-EXT-005-2115,90x90mm (2115mm) Aluminum Extrusion,in_stock,189.81,1,189.81,USD
+ST-EXT-005-2295,90x90mm (2295mm) Aluminum Extrusion,in_stock,205.73,13,2674.49,USD
+ST-EXT-005-3330,90x90mm (3330mm) Aluminum Extrusion,in_stock,298.51,2,597.02,USD
+ST-GP-001-0003,2x2 Hole Aluminum Assembly Plate,in_stock,11.44,8,91.52,USD
+ST-GP-001-0004,1x4 Hole Aluminum Assembly Plate,in_stock,12.33,4,49.32,USD
+ST-GP-001-0006,"L-Shaped Aluminum Assembly Plate, for 45 x 90mm extrusions",in_stock,30.48,2,60.96,USD
+ST-GP-001-0008,2x3 Hole Aluminum Assembly Plate,in_stock,14.27,24,342.48,USD
+ST-GP-001-0009,"90 Degree Joint Aluminum Assembly Plate, for 45x45mm Extrusions",in_stock,14.29,11,157.19,USD
+ST-GP-001-0010,"90 Degree Joint Aluminum Assembly Plate, for 45x90mm Extrusions",in_stock,30.48,20,609.60,USD
+ST-GP-001-0011,Tee Joint Aluminum Assembly Plate,in_stock,32.85,26,854.10,USD
+ST-GP-001-0019,2x5 Hole Aluminum Assembly Plate,in_stock,37.93,4,151.72,USD
+ST-GP-001-0023,1x6 Hole Aluminum Assembly Plate,in_stock,30.97,8,247.76,USD
+ST-GP-003-0001,Die Cast Gusset,in_stock,6.98,14,97.72,USD
+ST-GP-003-0004,90mm x 90mm Aluminum Gusset,in_stock,33.25,8,266.00,USD
+ST-GP-004-0003,2-Way Extrusion End Connector with Panel Cutouts,in_stock,13.89,3,41.67,USD
+ST-HP-003-0001,Die Cast Gusset with Locators,in_stock,8.97,118,1058.46,USD
+ST-HP-003-0004,90mm x 90mm Aluminum Gusset With Locators,in_stock,40.17,103,4137.51,USD
+ST-HP-003-0005,45mm x 90mm Aluminum Gusset with Locators,in_stock,25.91,54,1399.14,USD
+ST-RB-001-0008,"225x225mm UR10e/UR16e Mounting plate, for Universal Robots",in_stock,154.64,1,154.64,USD
+ST-SE-001-0004__2,"Floor Anchor, 90mm x 90mm",in_stock,72.5,13,942.50,USD
+ST-SE-005-0001,Door Hinge,in_stock,44.26,8,354.08,USD
+ST-SE-007-0001,Safety Interlock Switch,deprecated,197.28,2,394.56,USD
+ST-PN-004-0001,"Polycarbonate Panel, Clear 1/4'' [6.35mm]",in_stock,110.95,1,110.95,USD
+ST-PN-004-0001,"Polycarbonate Panel, Clear 1/4'' [6.35mm]",in_stock,110.95,1,110.95,USD
+ST-PN-004-0001,"Polycarbonate Panel, Clear 1/4'' [6.35mm]",in_stock,110.95,1,110.95,USD
+ST-PN-004-0001,"Polycarbonate Panel, Clear 1/4'' [6.35mm]",in_stock,110.95,1,110.95,USD
+ST-PN-004-0001,"Polycarbonate Panel, Clear 1/4'' [6.35mm]",in_stock,348.7,1,348.70,USD
+ST-PN-004-0001,"Polycarbonate Panel, Clear 1/4'' [6.35mm]",in_stock,348.7,1,348.70,USD
+ST-PN-004-0001,"Polycarbonate Panel, Clear 1/4'' [6.35mm]",in_stock,348.7,1,348.70,USD
+ST-PN-004-0001,"Polycarbonate Panel, Clear 1/4'' [6.35mm]",in_stock,348.7,1,348.70,USD
+ST-PN-004-0001,"Polycarbonate Panel, Clear 1/4'' [6.35mm]",in_stock,317.0,1,317.00,USD
+ST-PN-004-0001,"Polycarbonate Panel, Clear 1/4'' [6.35mm]",in_stock,364.55,1,364.55,USD
+ST-PN-004-0001,"Polycarbonate Panel, Clear 1/4'' [6.35mm]",in_stock,317.0,1,317.00,USD
+ST-PN-004-0001,"Polycarbonate Panel, Clear 1/4'' [6.35mm]",in_stock,364.55,1,364.55,USD
+ST-PN-014-0001,Panel Holding Strip,deprecated,89.97888000000003712,1,89.98,USD
+IMP-166201_176616,"8 X CUSTOM CUT RAIL MO-LM-014-2295 into 2250 mm, ONE END",in_stock,880,1,880.00,USD
+IMP-166203_176618,"4 X CUSTOM CUT RAIL MO-LM-014-0855 into 720 mm, BOTH ENDS",in_stock,880,1,880.00,USD
+IMP-166206_176621,2 X CUSTOM CUT EXTRUSION ST-EXT-05-2115 INTO 2070 mm,in_stock,45,2,90.00,USD
+HW-FN-002-0001,M8 Drop-in Spring Loaded T-Nut,in_stock,0,2862,0.00,USD
+HW-FN-003-0012,M8 x 12mm Screw,in_stock,0,42,0.00,USD
+HW-FN-003-0014,M8 x 14mm Screw,in_stock,0,161,0.00,USD
+HW-FN-003-0016,M8 x 16mm Screw,in_stock,0,91,0.00,USD
+HW-FN-003-0018,M8 x 18mm Screw,in_stock,0,2351,0.00,USD
+HW-FN-003-0020,M8 x 20mm Screw,in_stock,0,4,0.00,USD
+HW-FN-003-0022,M8 x 22mm Screw,in_stock,0,4,0.00,USD
+HW-FN-003-0030,M8 x 30mm Screw,in_stock,0,6,0.00,USD
+HW-FN-014-0001,M8-1.25 x 6mm Set Screw,in_stock,0,15,0.00,USD
+HW-FN-015-0018,M8 1.25 x 18mm Flat Head Screw,in_stock,0,247,0.00,USD
+HW-FN-002-0005,Butt-Joint Extrusion Connector,in_stock,4.63,24,111.12,USD
+PR-UR-001-0565,Universal Robots UR10e,published,47200.0,1,47200.00,USD
