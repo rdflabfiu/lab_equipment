@@ -1,0 +1,6 @@
+&ACCESS  R
+&PARAM DISKPATH = Program
+DEFDAT  tm_useraction
+
+
+ENDDAT

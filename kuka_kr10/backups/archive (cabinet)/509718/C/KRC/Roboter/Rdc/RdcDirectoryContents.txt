@@ -1,0 +1,19 @@
+Kuka-FS V1.0.0-0
+Card: KUKA ID-Card (Flash: C21010FF)
+
+Speicherkarte                         7 bytes in      1 sectors
+RobotData.xml                       174 bytes in      2 sectors
+MaintenanceLog.xml                1.901 bytes in     15 sectors
+KLIConfig.xml                     3.048 bytes in     24 sectors
+509718.cal                        4.296 bytes in     34 sectors
+509718.mam                          116 bytes in      1 sectors
+RobotInfo.xml                       717 bytes in      6 sectors
+InitialOperation.xml                 10 bytes in      1 sectors
+SAFEDEV.VAL                           8 bytes in      1 sectors
+SAFEOP.VAL                            8 bytes in      1 sectors
+_______________________________________________________________
+Total       10 file(s)           11.008 bytes in     86 sectors
+Free        48 file(s)          939.008 bytes in  7.336 sectors
+_______________________________________________________________
+Garbage      5 file(s)           15.616 bytes in    122 sectors
+Reserved     1 file(s)           17.408 bytes in    136 sectors

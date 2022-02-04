@@ -1,0 +1,739 @@
+%pocketmill.cyc
+
+;Zyklus fuer Taschenfraesen
+;History
+;Datum       Bemerkung
+;09.06.2008  Release 1.0
+;10.03.2009  Release 1.1 - @P17 neu
+;28.02.2011  Release 1.2 - Umsetzen der Bearbeitungsrichtung
+;29.03.2011  Release 1.3 - ERROR-ID's auf 13xxx verschoben
+;06.06.2011  Release 1.4 - Pruefung Bearbeitungstiefe ueberarbeitet
+;                          Berechnung+Pruefung Taschentiefe ueberarbeitet
+;16.12.2011  Release 1.5 - Verwendung @P3,@P4,@P5,@P9,@P10 wg. modaler Gueltigkeit ueberarbeitet. 
+;25.04.2012  Release 1.6 - Pruefung @P11,@P12,@P13,@P14,@P17 ueberarbeitet
+;20.03.2014  Release 1.7 - @P11 wg. modaler Gueltigkeit ueberarbeitet, Behandlung WZ-Radius Null.
+;                          Behandlung Eckenradius G302 bei sehr kleinem WZ-Radius
+;16.09.2015  Release 1.8 - @P18 neu (optional), Anzahl Heliumdrehungen beim Eintauchen
+;                          An-/Abfahrfahrbewegungen beim Schlichten ueberarbeitet.
+;10.06.2015  Release 1.9 - add label
+;19.09.2015  Release 1.10- Erweiterung auf Langlochbearbeitung (Eckenradius == halbe Taschenseite)
+;
+; @LABEL@
+
+#VAR
+  V.L.POCKET_DEPTH   = 0
+  V.L.DELTA_DEPTH    = 0
+  V.L.COUNTER1       = 0
+  V.L.COUNTER2       = 0
+  V.L.COUNTER3       = 0
+  V.L.DELTA1         = 0
+  V.L.DELTA2         = 0
+  V.L.DELTA3         = 0
+  V.L.LAP            = 0
+  V.L.ROT_NBR        = 0
+  V.L.ROT_NBR1       = 0
+  V.L.ROT_NBR2       = 0
+  V.L.RADIUS         = 0
+  V.L.FEED           = V.G.FEEDRATE          (Speichern des Vorschubes)
+  V.L.END_MILL_DEPTH = 0
+  V.L.SAFE_CLEAR     = 0
+  V.L.NBR_INFEED     = 0 
+  V.L.RETRACT_DIST   = 0.5
+  V.L.HELI_ROT       = 0
+#ENDVAR
+
+(Plausibilitaetspruefungen der Versorgungsparameter und vorbereitende Berechnungen)
+
+
+$IF V.G.WZ_AKT.R == 0                        (Behandlung, falls Werkzeugradius Null ist)
+  #ERROR [ID=13172 RC=0]                     (Warning: Werkzeugradius ist Null. Setzen auf Defaultwert 1mm)
+  V.G.WZ_AKT.R = 1
+$ENDIF 
+
+$IF @P3 == 0
+  #ERROR [ID=13100 RC=2]                     (Error: Sicherheitsabstand nicht definiert)
+$ELSE
+   @P3 = ABS[@P3] 
+$ENDIF
+
+$IF V.G.@P[4].VALID == TRUE AND V.G.@P[5].VALID == TRUE
+  #ERROR [ID=13101 RC=0]                     (Warning: Mehrfachdefinition der Bearbeitungstiefe)
+  @P5 = 0                                    (Relative Bearbeitungstiefe wird geloescht, absolut ist prior) 
+$ENDIF
+
+$IF V.G.@P[4].VALID == FALSE AND V.G.@P[5].VALID == FALSE
+  #ERROR [ID=13110 RC=2]                     (Error: Bearbeitungstiefe nicht definiert)
+$ENDIF
+
+$IF V.G.@P[4].VALID == FALSE AND V.G.@P[5].VALID == TRUE AND @P5 == 0
+  #ERROR [ID=13111 RC=2]                     (Error: Relative Bearbeitungstiefe ist Null)
+$ENDIF
+
+$IF @P6 != 0
+  @P6 = ABS[@P6]
+$ELSE
+  #ERROR [ID=13160 RC=2]                     (Error: Taschenlaenge nicht definiert)     
+$ENDIF
+
+$IF @P7 != 0
+  @P7 = ABS[@P7]
+$ELSE
+  #ERROR [ID=13161 RC=2]                     (Error: Taschenbreite nicht definiert)     
+$ENDIF
+
+$IF @P8 != 0
+  @P8 = ABS[@P8]
+$ELSE
+  #ERROR [ID=13162 RC=0]                     (Warning: Eckenradius nicht definiert)  
+  @P8 = V.G.WZ_AKT.R                         (Setzen des Eckenradius auf Werkzeugradius)   
+$ENDIF
+
+$IF @P12 != 0
+  @P12 = ABS[@P12]
+$ENDIF
+
+$IF V.G.WZ_AKT.R > 0.5*[@P6-@P12] OR V.G.WZ_AKT.R > 0.5*[@P7-@P12]
+ #ERROR [ID=13163 RC=2]                      (Error: Werkzeugradius zu gross)     
+$ENDIF
+
+$IF V.G.WZ_AKT.R > @P8
+  #ERROR [ID=13167 RC=0]                     (Warning: Werkzeugradius groesser als Eckenradius)
+  @P8 = V.G.WZ_AKT.R                         (Setzen des Eckenradius auf Werkzeugradius)
+$ENDIF
+
+$IF @P12 == 0
+  $IF @P14 == 1 OR  @P14 == 3                (Nur bei Bearbeitungsarten mit Schrupppen)                            
+    #ERROR [ID=13164 RC=0]                   (Warning: Schlichtaufmass ist Null)  
+    @P14 = 1  
+  $ENDIF
+$ENDIF
+
+$SWITCH @P13                                 (Fraesrichtung)
+  $CASE 2
+  $CASE 3
+  $BREAK
+  
+  $DEFAULT
+  #ERROR [ID=13165 RC=2]                     (Error: Unbekannte Fraesrichtung definiert)
+$ENDSWITCH
+
+$SWITCH @P14                                 (Bearbeitungsart)
+  $CASE 1
+  $CASE 2
+  $CASE 3
+  $BREAK
+  
+  $DEFAULT
+  #ERROR [ID=13166 RC=2]                     (Error: Unbekannte Bearbeitungsart definiert)
+$ENDSWITCH
+
+$SWITCH @P17                                 (Eintauchverfahren)
+  $CASE 0
+    @P17 = 1                                 (Eintauchen auf schiefer Bahn ist Default)
+  $BREAK
+  
+  $CASE 1
+  $CASE 2
+  $CASE 3
+  $BREAK
+  
+  $DEFAULT
+    #ERROR [ID=13170 RC=0]                   (Warning: Unbekanntes Eintauchverfahren definiert)  
+    @P17 = 1
+$ENDSWITCH
+
+$IF @P18 == 0                                (Anzahl Helikalumdrehungen beim Eintauchen)
+  V.L.HELI_ROT = 3
+$ELSE
+  V.L.HELI_ROT = ABS[@P18]
+$ENDIF
+
+(Berechnung der Taschentiefe fuer internen Gebrauch)
+$IF V.G.@P[4].VALID == TRUE
+  V.L.POCKET_DEPTH = ABS[@P2 - @P4]   
+$ELSE
+  V.L.POCKET_DEPTH = ABS[@P5]
+$ENDIF
+
+$IF V.G.WZ_AKT.P[0] != 0
+   $IF V.L.POCKET_DEPTH > [V.G.WZ_AKT.P[0]*DEXP[-4]] 
+     #ERROR [ID=13102 RC=2]                  (Error: Programmierte Bearbeitungstiefe ueberschreitet zulaessige Werkzeuglaenge)
+   $ENDIF
+$ENDIF
+
+
+(Berechnung der richtigen Zustelltiefe)
+$IF @P11 == 0
+  #ERROR [ID=13103 RC=2]                     (Error: Anzahl der Zustellungen nicht definiert)     
+$ELSE
+  @P11 = ABS[@P11]
+  @P11 = ROUND[@P11]
+  V.L.DELTA_DEPTH = V.L.POCKET_DEPTH / @P11
+  V.L.NBR_INFEED = @P11
+$ENDIF
+
+$IF V.G.WZ_AKT.P[1] != 0
+  $IF V.L.DELTA_DEPTH  > [V.G.WZ_AKT.P[1] * DEXP[-4]]
+    #ERROR [ID=13104 RC=0]                   (Warning: Zustelltiefe ueberschreitet zulaessigen Bearbeitungshub)
+
+    $IF V.L.POCKET_DEPTH MOD [V.G.WZ_AKT.P[1] * DEXP[-4]] == 0
+      V.L.NBR_INFEED = V.L.POCKET_DEPTH / [V.G.WZ_AKT.P[1] * DEXP[-4]]
+    $ELSE
+      V.L.NBR_INFEED = 1+INT[V.L.POCKET_DEPTH / [V.G.WZ_AKT.P[1] * DEXP[-4]]]  (Zur Sicherheit eine Zustellung mehr)
+    $ENDIF 
+
+    V.L.DELTA_DEPTH = V.L.POCKET_DEPTH / V.L.NBR_INFEED     (Tiefenzustellung)
+  $ENDIF
+$ENDIF
+
+(Umsetzen der Bearbeitungsrichtung von alter auf neue Programmierung)
+$IF @P15 == 20 OR @P15 == 30 OR @P15 == 50
+  @P15 = -1;
+$ENDIF
+
+$IF @P15 == 10 OR @P15 == 40 OR @P15 == 60
+  @P15 = 1;
+$ENDIF
+
+(Bestimmung der Sicherheitsebene und der Bearbeitungstiefe, Richtungsabhaengig)
+$SWITCH @P15                            (Richtung)
+  $CASE -1
+    $IF @P1 <= @P2                      (Rueckzugsebene liegt unterhalb Bezugsebene oder sind gleich)
+      #ERROR [ID=13106 RC=2]            (Error: Falsche Definition von Bezugs- und Rueckzugsebene) 
+    $ENDIF
+
+    V.L.SAFE_CLEAR = @P2+@P3            (Sicherheitsebene=Bezugsebene+Sicherheitsabstand)
+
+    $IF V.L.SAFE_CLEAR >= @P1           (Resultierende Sicherheitsebene liegt oberhalb Rueckzugsebene oder gleich)
+      #ERROR [ID=13107 RC=2]            (Error: Falsche Definition des Sicherheitsabstandes) 
+    $ENDIF
+
+    $IF @P5 != 0
+        V.L.END_MILL_DEPTH = @P2-ABS[@P5]   (Bearbeitungstiefe intern immer absolut)
+    $ELSE 
+        V.L.END_MILL_DEPTH = @P4
+    $ENDIF
+  $BREAK
+
+  $CASE 1
+    $IF @P1 >= @P2                      (Rueckzugsebene liegt oberhalb Bezugsebene oder sind gleich)
+      #ERROR [ID=13106 RC=2]            (Error: Falsche Definition von Bezugs- und Rueckzugsebene) 
+    $ENDIF
+
+    V.L.SAFE_CLEAR = @P2-@P3            (Sicherheitsebene=Bezugsebene-Sicherheitsabstand)
+
+    $IF V.L.SAFE_CLEAR <= @P1           (Resultierende Sicherheitsebene liegt unterhalb Rueckzugsebene oder gleich)
+      #ERROR [ID=13107 RC=2]            (Error: Falsche Definition des Sicherheitsabstandes) 
+    $ENDIF
+
+    $IF @P5 != 0
+        V.L.END_MILL_DEPTH = @P2+ABS[@P5]   (Bearbeitungstiefe intern immer absolut)
+    $ELSE 
+        V.L.END_MILL_DEPTH = @P4
+    $ENDIF
+  $BREAK
+
+  $DEFAULT
+    #ERROR [ID=13108 RC=2]              (Error: Keine oder unbekannte Bearbeitungsrichtung definiert)
+$ENDSWITCH
+
+
+ G90 G00 @ZV.L.SAFE_CLEAR               (Fahre im Eilgang auf Sicherheitsabstand)
+
+(--- Bestimmen der aktuellen Taschenmitte und Vorbereiten fuer eventuell modalen Aufruf ---)
+
+ $IF V.G.@P[9].VALID == FALSE AND V.G.@P[10].VALID == FALSE
+   @P9  = V.A.ACT_POS.@X                (Wenn kein Taschenmittelpunkt definiert ist, oder bei modalem Aufruf...)
+   @P10 = V.A.ACT_POS.@Y                (... aktuelle Position als Taschenmittelpunkt uebernehmen)
+ $ENDIF  
+
+ $IF [V.G.@P[9].VALID == FALSE AND V.G.@P[10].VALID == TRUE] OR [V.G.@P[9].VALID == TRUE AND V.G.@P[10].VALID == FALSE]
+   #ERROR [ID=13171 RC=2]                                (Error: Taschenmittelpunkt nicht vollstaendig definiert) 
+ $ENDIF
+
+ $IF V.G.@P[9].VALID == TRUE AND V.G.@P[10].VALID == TRUE (Vorbereiten fuer eventuellen modalen Aufruf)
+   V.G.@P[9].VALID  = FALSE
+   V.G.@P[10].VALID = FALSE
+ $ENDIF
+
+ 
+ G00 G90 @X@P9 @Y@P10                   (Fahre auf Taschenmittelpunkt, falls nicht schon vorpositioniert)
+
+(----------- Schruppbearbeitung ----------)
+
+$IF @P14 == 1 OR @P14 == 3
+  (Vorbereitende Berechnungen)
+  
+  V.L.DELTA1 = @P6 - [2*@P12]                            (Schrupplaenge abzgl. Schlichtaufmass)
+  V.L.DELTA2 = @P7 - [2*@P12]                            (Schruppbreite abzgl. Schlichtaufmass)
+
+
+  $IF @P16 != 0
+    $IF [ABS[@P16]/100] <= 1
+      V.L.LAP = [ABS[@P16]/100]*2*V.G.WZ_AKT.R           (Programmierte Ueberlappung oder ...)
+    $ELSE
+      #ERROR [ID=13168 RC=2]                             (Error: Falsche Definition des Ueberlappungsfaktors) 
+    $ENDIF
+  $ELSEIF V.G.WZ_AKT.P[8] != 0
+    V.L.LAP = [V.G.WZ_AKT.P[8]/100]*2*V.G.WZ_AKT.R       (... vordefinierte Ueberlappung aus Werkzeug oder ...)
+  $ELSE
+    V.L.LAP = V.G.WZ_AKT.R                               (... Defaultueberlappung maximal 50%)
+  $ENDIF
+  
+
+  (Berechnung der Ausfraesumlaeufe)
+
+  V.L.ROT_NBR1 = 2+INT[[[V.L.DELTA1/2]-[2*V.G.WZ_AKT.R]] / V.L.LAP]     (Max. Anzahl Umlaeufe bzgl. Laenge)
+  V.L.ROT_NBR2 = 2+INT[[[V.L.DELTA2/2]-[2*V.G.WZ_AKT.R]] / V.L.LAP]     (Max. Anzahl Umlaeufe bzgl. Breite) 
+
+  (Die kleinere Anzahl an Umlaeufen ist maßgebend)
+  $IF V.L.ROT_NBR1 > V.L.ROT_NBR2 
+    V.L.ROT_NBR = V.L.ROT_NBR2
+  $ELSE
+    V.L.ROT_NBR = V.L.ROT_NBR1
+  $ENDIF
+
+  $IF [2*V.G.WZ_AKT.R] >= [V.L.DELTA1/2] OR [2*V.G.WZ_AKT.R] >= [V.L.DELTA2/2]          (Optimierung der Bewegung bei grossen Fraesern)
+    V.L.LAP = 0
+    V.L.ROT_NBR = 1
+  $ENDIF
+
+
+  #CONTOUR MODE [DIST PRE_DIST=V.G.WZ_AKT.R  POST_DIST=V.G.WZ_AKT.R  CONST_VEL=1]       (Konfiguration Polynomueberschleifen G61)
+  
+
+  $IF @P15 == -1                                                                        (Bearbeitung in negativer Richtung)
+    $FOR V.L.COUNTER1=1, V.L.NBR_INFEED, 1
+      $IF V.L.COUNTER1 != V.L.NBR_INFEED   
+        $IF @P17 == 1   (In schiefer Bahn eintauchen)
+          G90 G01 F[V.G.FEEDRATE*0.2] @Z[@P2-[V.L.COUNTER1 * V.L.DELTA_DEPTH]] @X[@P9-[V.L.DELTA1/2]+V.G.WZ_AKT.R]   (Eintauchen mit 20% des Vorschubes)
+        $ENDIF
+
+        $IF @P17 == 2   (Senkrecht eintauchen)
+          G90 G01 F[V.L.FEED*0.2] @Z[@P2-[V.L.COUNTER1 * V.L.DELTA_DEPTH]]                  (Eintauchen mit 20% des Vorschubes)
+                                  @X[@P9-[V.L.DELTA1/2]+V.G.WZ_AKT.R]                       (Taschenrand anfahren)
+        $ENDIF
+
+        $IF @P17 == 3   (Helikal eintauchen)                               
+          G90 G161 G01 F[V.L.FEED*0.2] @X[@P9+[0.1*V.G.WZ_AKT.R]]                                      (In erster Hauptachse mit 20% Vorschub an Lochrand fahren)
+          G02 @I@P9 @J@P10 @K[V.L.DELTA_DEPTH/V.L.HELI_ROT] @Z[@P2-[V.L.COUNTER1 * V.L.DELTA_DEPTH]]   (Helikal x-Umdrehungen eintauchen)
+          G02 @I@P9 @J@P10                                                                             (Grundkreis fahren)  
+          G01 @X[@P9-[V.L.DELTA1/2]+V.G.WZ_AKT.R]                                                      (Taschenrand anfahren)
+        $ENDIF
+      $ELSE
+        $IF @P17 == 1   (In schiefer Bahn eintauchen)
+          G90 G01 F[V.G.FEEDRATE*0.2] @ZV.L.END_MILL_DEPTH @X[@P9-[V.L.DELTA1/2]+V.G.WZ_AKT.R]  (Letzte Zustellung mit 20% Vorschub genau auf Taschentiefe)
+        $ENDIF
+
+        $IF @P17 == 2   (Senkrecht eintauchen)
+        G90 G01 F[V.L.FEED*0.2] @ZV.L.END_MILL_DEPTH                                        (Letzte Zustellung mit 20% Vorschub genau auf Taschentiefe)
+                                @X[@P9-[V.L.DELTA1/2]+V.G.WZ_AKT.R]                         (Taschenrand anfahren)
+        $ENDIF
+
+        $IF @P17 == 3   (Helikal eintauchen) 
+          G90 G161 G01 F[V.L.FEED*0.2] @X[@P9+[0.1*V.G.WZ_AKT.R]]                           (In erster Hauptachse mit 20% Vorschub an Lochrand fahren)
+          G02 @I@P9 @J@P10 @K[V.L.DELTA_DEPTH/V.L.HELI_ROT] @ZV.L.END_MILL_DEPTH            (Helikal x-Umdrehungen, letzte Zustellung genau auf Taschentiefe)
+          G02 @I@P9 @J@P10                                                                  (Grundkreis fahren)
+          G01 @X[@P9-[V.L.DELTA1/2]+V.G.WZ_AKT.R]                                           (Taschenrand anfahren)
+        $ENDIF
+      $ENDIF
+              
+      V.L.COUNTER3 = 0
+      V.L.DELTA3 = 0
+      V.L.RADIUS = @P8-V.G.WZ_AKT.R-@P12  
+      
+      G01 FV.L.FEED                                            (Setzen des Bahnvorschubes auf 100% nach Eintauchen) 
+
+      $IF V.L.DELTA1 > V.L.DELTA2
+        $IF @P8 > [V.L.DELTA2/2]+@P12
+          #ERROR [ID=13169 RC=0]                               (Warning: Eckenradius wird begrenzt, da zu gross) 
+          V.L.RADIUS = [V.L.DELTA2/2]-V.G.WZ_AKT.R             (Radiusbegrenzung beim Schruppen)
+        $ENDIF
+      $ELSE
+        $IF @P8 > [V.L.DELTA1/2]+@P12
+          #ERROR [ID=13169 RC=0]                               (Warning: Eckenradius wird begrenzt, da zu gross) 
+          V.L.RADIUS = [V.L.DELTA1/2]-V.G.WZ_AKT.R             (Radiusbegrenzung beim Schruppen)
+        $ENDIF
+      $ENDIF
+      
+      $IF @P13 == 2                                            (Schruppen im Uhrzeigersinn)
+        $FOR V.L.COUNTER2=1, V.L.ROT_NBR, 1 
+          G91 @Y[[[V.L.DELTA2/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @X@P9 
+          G91 @X[[[V.L.DELTA1/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @Y@P10
+          G91 @Y-[[[V.L.DELTA2/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @X@P9
+          G91 @X-[[[V.L.DELTA1/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @Y@P10
+          G91 F[V.L.FEED*0.3] @XV.L.LAP G61                    (Ueberlappung bzw. Umlaufzustellbewegung mit 30% des Bahnvorschubes und Ueberschleifen)
+
+          V.L.COUNTER3 = V.L.COUNTER3+1
+          V.L.DELTA3 = V.L.COUNTER3*[V.L.LAP]
+
+          G01 FV.L.FEED                                        (Setzen des Bahnvorschubes auf 100% nach Umlaufzustellbewegung) 
+
+          $IF V.L.RADIUS-V.L.LAP <= 0.01
+           V.L.RADIUS=0
+          $ELSE
+           V.L.RADIUS = V.L.RADIUS-V.L.LAP 
+          $ENDIF
+        $ENDFOR
+      $ENDIF
+
+ 
+      $IF @P13 == 3                                            (Schruppen im Gegenuhrzeigersinn)
+        $FOR V.L.COUNTER2=1, V.L.ROT_NBR, 1 
+          G91 @Y-[[[V.L.DELTA2/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @X@P9 
+          G91 @X[[[V.L.DELTA1/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @Y@P10
+          G91 @Y[[[V.L.DELTA2/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @X@P9
+          G91 @X-[[[V.L.DELTA1/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @Y@P10
+          G91 F[V.L.FEED*0.3] @XV.L.LAP G61                    (Ueberlappung bzw. Umlaufzustellbewegung mit 30% des Bahnvorschubes und Ueberschleifen)
+
+          V.L.COUNTER3 = V.L.COUNTER3+1
+          V.L.DELTA3 = V.L.COUNTER3*[V.L.LAP]
+
+          G01 FV.L.FEED                                        (Setzen des Bahnvorschubes auf 100% nach Umlaufzustellbewegung)
+
+          $IF V.L.RADIUS-V.L.LAP <= 0.01
+           V.L.RADIUS = 0
+          $ELSE
+           V.L.RADIUS = V.L.RADIUS-V.L.LAP 
+          $ENDIF
+        $ENDFOR
+      $ENDIF
+
+      G01 G90 @Y@P10                                           (Fahre auf Taschenmittelpunkt)
+      G01 G90 @X@P9 F[V.L.FEED*1.2]
+    $ENDFOR
+  $ENDIF
+
+  $IF @P15 == 1                                                (Bearbeitung in positiver Richtung)
+    $FOR V.L.COUNTER1=1, V.L.NBR_INFEED, 1
+      $IF V.L.COUNTER1 != V.L.NBR_INFEED
+        $IF @P17 == 1   (In schiefer Bahn eintauchen)
+          G90 G01 F[V.G.FEEDRATE*0.2] @Z[@P2+[V.L.COUNTER1 * V.L.DELTA_DEPTH]] @X[@P9-[V.L.DELTA1/2]+V.G.WZ_AKT.R]   (Eintauchen mit 20% des Vorschubes)
+        $ENDIF
+
+        $IF @P17 == 2   (Senkrecht eintauchen)
+          G90 G01 F[V.L.FEED*0.2] @Z[@P2+[V.L.COUNTER1 * V.L.DELTA_DEPTH]]                  (Eintauchen mit 20% des Vorschubes)
+                                  @X[@P9-[V.L.DELTA1/2]+V.G.WZ_AKT.R]                       (Taschenrand anfahren)
+        $ENDIF
+
+        $IF @P17 == 3   (Helikal eintauchen) 
+          G90 G161 G01 F[V.L.FEED*0.2] @X[@P9+[0.1*V.G.WZ_AKT.R]]                                      (In erster Hauptachse mit 20% Vorschub an Lochrand fahren)
+          G02 @I@P9 @J@P10 @K[V.L.DELTA_DEPTH/V.L.HELI_ROT] @Z[@P2+[V.L.COUNTER1 * V.L.DELTA_DEPTH]]   (Helikal x-Umdrehungen eintauchen)
+          G02 @I@P9 @J@P10                                                                             (Grundkreis fahren)  
+          G01 @X[@P9-[V.L.DELTA1/2]+V.G.WZ_AKT.R]                                                      (Taschenrand anfahren)
+        $ENDIF
+      $ELSE
+        $IF @P17 == 1   (In schiefer Bahn eintauchen)
+          G90 G01 F[V.G.FEEDRATE*0.2] @ZV.L.END_MILL_DEPTH @X[@P9-[V.L.DELTA1/2]+V.G.WZ_AKT.R]  (Letzte Zustellung mit 20% Vorschub genau auf Taschentiefe)
+        $ENDIF
+
+        $IF @P17 == 2   (Senkrecht eintauchen)
+          G90 G01 F[V.L.FEED*0.2] @ZV.L.END_MILL_DEPTH                                      (Letzte Zustellung mit 20% Vorschub genau auf Taschentiefe)
+                                  @X[@P9-[V.L.DELTA1/2]+V.G.WZ_AKT.R]                       (Taschenrand anfahren)
+        $ENDIF
+
+        $IF @P17 == 3   (Helikal eintauchen) 
+          G90 G161 G01 F[V.L.FEED*0.2] @X[@P9+[0.1*V.G.WZ_AKT.R]]                           (In erster Hauptachse mit 20% Vorschub an Lochrand fahren)
+          G02 @I@P9 @J@P10 @K[V.L.DELTA_DEPTH/V.L.HELI_ROT] @ZV.L.END_MILL_DEPTH            (Helikal x-Umdrehungen, letzte Zustellung genau auf Taschentiefe)
+          G02 @I@P9 @J@P10                                                                  (Grundkreis fahren)
+          G01 @X[@P9-[V.L.DELTA1/2]+V.G.WZ_AKT.R]                                           (Taschenrand anfahren)
+        $ENDIF
+      $ENDIF
+       
+      V.L.COUNTER3 = 0
+      V.L.DELTA3 = 0
+      V.L.RADIUS = @P8-V.G.WZ_AKT.R-@P12
+      
+      G01 FV.L.FEED                                            (Setzen des Bahnvorschubes auf 100% nach Eintauchen)  
+
+      $IF V.L.DELTA1 > V.L.DELTA2
+        $IF @P8 > [V.L.DELTA2/2]+@P12
+          #ERROR [ID=13169 RC=0]                               (Warning: Eckenradius wird begrenzt, da zu gross) 
+          V.L.RADIUS = [V.L.DELTA2/2]-V.G.WZ_AKT.R             (Radiusbegrenzung beim Schruppen)
+        $ENDIF
+      $ELSE
+        $IF @P8 > [V.L.DELTA1/2]+@P12
+          #ERROR [ID=13169 RC=0]                               (Warning: Eckenradius wird begrenzt, da zu gross) 
+          V.L.RADIUS = [V.L.DELTA1/2]-V.G.WZ_AKT.R             (Radiusbegrenzung beim Schruppen)
+        $ENDIF
+      $ENDIF
+
+      $IF @P13 == 2                                            (Schruppen im Uhrzeigersinn)
+        $FOR V.L.COUNTER2=1, V.L.ROT_NBR, 1 
+          G91 @Y[[[V.L.DELTA2/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @X@P9 
+          G91 @X[[[V.L.DELTA1/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @Y@P10
+          G91 @Y-[[[V.L.DELTA2/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @X@P9
+          G91 @X-[[[V.L.DELTA1/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @Y@P10
+          G91 F[V.L.FEED*0.3] @XV.L.LAP G61                     (Ueberlappung bzw. Umlaufzustellbewegung mit 30% des Bahnvorschubes und Ueberschleifen)
+
+          V.L.COUNTER3 = V.L.COUNTER3+1
+          V.L.DELTA3 = V.L.COUNTER3*[V.L.LAP]
+
+          G01 FV.L.FEED                                         (Setzen des Bahnvorschubes auf 100% nach Umlaufzustellbewegung)
+
+          $IF V.L.RADIUS-V.L.LAP <= 0.01
+           V.L.RADIUS = 0
+          $ELSE
+           V.L.RADIUS = V.L.RADIUS-V.L.LAP 
+          $ENDIF
+        $ENDFOR
+      $ENDIF
+ 
+      $IF @P13 == 3                                             (Schruppen im Gegenuhrzeigersinn)
+        $FOR V.L.COUNTER2=1, V.L.ROT_NBR, 1 
+          G91 @Y-[[[V.L.DELTA2/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @X@P9 
+          G91 @X[[[V.L.DELTA1/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @Y@P10
+          G91 @Y[[[V.L.DELTA2/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @X@P9
+          G91 @X-[[[V.L.DELTA1/2]-V.G.WZ_AKT.R]-V.L.DELTA3]
+          $IF V.L.RADIUS > 0 
+            G302 @IV.L.RADIUS
+          $ENDIF
+          G90 @Y@P10
+          G91 F[V.L.FEED*0.3] @XV.L.LAP G61                     (Ueberlappung bzw. Umlaufzustellbewegung mit 30% des Bahnvorschubes und Ueberschleifen)
+
+          V.L.COUNTER3 = V.L.COUNTER3+1
+          V.L.DELTA3 = V.L.COUNTER3*[V.L.LAP]
+
+          G01 FV.L.FEED                                         (Setzen des Bahnvorschubes auf 100% nach Umlaufzustellbewegung)
+
+          $IF V.L.RADIUS-V.L.LAP <= 0.01
+           V.L.RADIUS = 0
+          $ELSE
+           V.L.RADIUS = V.L.RADIUS-V.L.LAP 
+          $ENDIF
+        $ENDFOR
+      $ENDIF
+
+      G01 G90 @Y@P10                                            (Fahre auf Taschenmittelpunkt)
+      G01 G90 @X@P9 F[V.L.FEED*1.2]
+    $ENDFOR
+  $ENDIF
+
+  $IF @P14 == 3
+    V.L.NBR_INFEED = 1                  (Schlichten in einem Umlauf)
+    G01 FV.L.FEED                       (Setzen des Bahnvorschubes auf 100% nach Schruppen)
+    $GOTO [SCHLICHTEN]                  (Weiter mit Schlichten)
+  $ELSE
+    G90 G00 @Z@P1                       (Fahre im Eilgang auf Rueckzugsebene)
+    $GOTO N999
+  $ENDIF
+$ENDIF                                  (Ende Schruppen)
+
+
+(----------- Schlichtbearbeitung ----------)
+
+$IF @P14 == 2 
+[SCHLICHTEN]
+  $IF @P6 > @P7
+    $IF @P8 > [@P7/2]
+      #ERROR [ID=13169 RC=0]                 (Warning: Eckenradius wird begrenzt, da zu gross) 
+      V.L.RADIUS = [@P7/2]-V.G.WZ_AKT.R      (Radiusbegrenzung beim Schlichten)
+    $ELSE
+      V.L.RADIUS = @P8-V.G.WZ_AKT.R
+    $ENDIF
+  $ELSE
+    $IF @P8 > [@P6/2]
+      #ERROR [ID=13169 RC=0]                 (Warning: Eckenradius wird begrenzt, da zu gross)
+      V.L.RADIUS = [@P6/2]-V.G.WZ_AKT.R      (Radiusbegrenzung beim Schlichten)
+    $ELSE
+      V.L.RADIUS = @P8-V.G.WZ_AKT.R      
+    $ENDIF
+  $ENDIF
+  
+  $IF @P15 == -1
+    $FOR V.L.COUNTER1=1, V.L.NBR_INFEED, 1
+      $IF V.L.COUNTER1 != V.L.NBR_INFEED
+        G90 G01 @Z[@P2-[V.L.COUNTER1 * V.L.DELTA_DEPTH]+V.L.RETRACT_DIST]           (Fahre auf Taschenmitte über Boden)
+      $ELSE
+        G90 G01 @Z[V.L.END_MILL_DEPTH+V.L.RETRACT_DIST]
+      $ENDIF
+      
+      $IF @P13 == 2                                                                 (Schlichten im Uhrzeigersinn)
+        G91 G01 F[V.L.FEED*0.6] @X-[[@P6/2]-V.G.WZ_AKT.R-[@P7*0.1]] @Y-@P7*0.1      (Abgehoben Anfahren mit 60% des Bahnvorschubes)
+        G02 G91 @X-@P7*0.1 @Y@P7*0.1 @Z-V.L.RETRACT_DIST R@P7*0.1                   (Helikal Anfahren an Taschenrand)
+        G01 FV.L.FEED                                                               (Setzen des Bahnvorschubes auf 100% nach Anfahren)
+        G01 G91 @Y[[@P7/2]-V.G.WZ_AKT.R]
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @X@P9
+        G91 @X[[@P6/2]-V.G.WZ_AKT.R] 
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @Y@P10
+        G91 @Y-[[@P7/2]-V.G.WZ_AKT.R] 
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @X@P9
+        G91 @X-[[@P6/2]-V.G.WZ_AKT.R] 
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @Y@P10
+        G02 G91  @X@P7*0.1 @Y@P7*0.1  @Z+V.L.RETRACT_DIST  R@P7*0.1                 (Helikal Wegfahren vom Taschenrand) 
+      $ENDIF
+
+
+      $IF @P13 == 3                                                                 (Schlichten im Gegenuhrzeigersinn)
+        G91 G01 F[V.L.FEED*0.6] @X-[[@P6/2]-V.G.WZ_AKT.R-[@P7*0.1]] @Y+@P7*0.1      (Abgehoben Anfahren mit 60% des Bahnvorschubes)
+        G03 G91 @X-@P7*0.1 @Y-@P7*0.1 @Z-V.L.RETRACT_DIST R@P7*0.1                  (Helikal Anfahren an Taschenrand)
+        G01 FV.L.FEED                                                               (Setzen des Bahnvorschubes auf 100% nach Anfahren)
+        G01 G91 @Y-[[@P7/2]-V.G.WZ_AKT.R]
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @X@P9
+        G91 @X[[@P6/2]-V.G.WZ_AKT.R] 
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @Y@P10
+        G91 @Y[[@P7/2]-V.G.WZ_AKT.R] 
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @X@P9
+        G91 @X-[[@P6/2]-V.G.WZ_AKT.R] 
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @Y@P10
+        G03 G91  @X@P7*0.1 @Y-@P7*0.1  @Z+V.L.RETRACT_DIST  R@P7*0.1                 (Helikal Wegfahren vom Taschenrand) 
+      $ENDIF
+      G00 G90 @X@P9 @Y@P10 @Z[V.L.END_MILL_DEPTH+V.L.DELTA_DEPTH]                    (Fahre über Taschenmittelpunkt)
+    $ENDFOR
+  $ENDIF
+
+  $IF @P15 == 1
+    $FOR V.L.COUNTER1=1, V.L.NBR_INFEED, 1
+      $IF V.L.COUNTER1 != V.L.NBR_INFEED
+        G90 G01 @Z[@P2+[V.L.COUNTER1 * V.L.DELTA_DEPTH]+V.L.RETRACT_DIST]            (Fahre auf Taschenmitte über Boden)
+      $ELSE
+        G90 G01 @Z[V.L.END_MILL_DEPTH-V.L.RETRACT_DIST]
+      $ENDIF
+
+      $IF @P13 == 2                                                                 (Schlichten im Uhrzeigersinn)
+        G91 G01 F[V.L.FEED*0.6] @X-[[@P6/2]-V.G.WZ_AKT.R-[@P7*0.1]] @Y-@P7*0.1      (Abgehoben Anfahren mit 60% des Bahnvorschubes)
+        G02 G91 @X-@P7*0.1 @Y@P7*0.1 @Z+V.L.RETRACT_DIST R@P7*0.1                   (Helikal Anfahren an Taschenrand)
+        G01 FV.L.FEED                                                               (Setzen des Bahnvorschubes auf 100% nach Anfahren)
+        G91 @Y[[@P7/2]-V.G.WZ_AKT.R]
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @X@P9
+        G91 @X[[@P6/2]-V.G.WZ_AKT.R] 
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @Y@P10
+        G91 @Y-[[@P7/2]-V.G.WZ_AKT.R] 
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @X@P9
+        G91 @X-[[@P6/2]-V.G.WZ_AKT.R] 
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @Y@P10
+        G02 G91  @X@P7*0.1 @Y@P7*0.1  @Z-V.L.RETRACT_DIST  R@P7*0.1                 (Helikal Wegfahren vom Taschenrand) 
+      $ENDIF
+
+
+      $IF @P13 == 3                                                                 (Schlichten im Gegenuhrzeigersinn)
+        G91 G01 F[V.L.FEED*0.6] @X-[[@P6/2]-V.G.WZ_AKT.R-[@P7*0.1]] @Y+@P7*0.1      (Abgehoben Anfahren mit 60% des Bahnvorschubes)
+        G03 G91 @X-@P7*0.1 @Y-@P7*0.1 @Z+V.L.RETRACT_DIST R@P7*0.1                  (Helikal Anfahren an Taschenrand)
+        G01 FV.L.FEED                                                               (Setzen des Bahnvorschubes auf 100% nach Anfahren)
+        G91 @Y-[[@P7/2]-V.G.WZ_AKT.R]
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @X@P9
+        G91 @X[[@P6/2]-V.G.WZ_AKT.R] 
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @Y@P10
+        G91 @Y[[@P7/2]-V.G.WZ_AKT.R] 
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @X@P9
+        G91 @X-[[@P6/2]-V.G.WZ_AKT.R] 
+        $IF V.L.RADIUS > 0 
+          G302 @IV.L.RADIUS
+        $ENDIF
+        G90 @Y@P10 
+        G03 G91  @X@P7*0.1 @Y-@P7*0.1  @Z-V.L.RETRACT_DIST  R@P7*0.1                 (Helikal Wegfahren vom Taschenrand) 
+      $ENDIF
+      G00 G90 @X@P9 @Y@P10 @Z[V.L.END_MILL_DEPTH-V.L.DELTA_DEPTH]                    (Fahre über Taschenmittelpunkt)
+    $ENDFOR
+  $ENDIF
+
+  G90 G00 @Z@P1                               (Fahre im Eilgang auf Rueckzugsebene)
+$ENDIF                                        (Ende Schlichten)
+
+
+N999: M29

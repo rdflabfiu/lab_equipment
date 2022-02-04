@@ -1,0 +1,214 @@
+&ACCESS  R
+&COMMENT GripperSpotTech package
+&PARAM DISKPATH = TP/GripperSpotTech
+&PARAM KUKATPGRP_VERSION = 4.0
+&REL 1
+DEF Grp_User ()
+;############################################
+;# File-Version: 1.0                        #
+;# Copyright (c) KUKA Roboter GmbH 2015     #
+;############################################
+END; (Grp_UserCond)
+
+GLOBAL DEFFCT BOOL GRPg_bUserErrStrategy(iGrpNo:IN, iStNo:IN)
+;iGrpNo: Gripper number
+;iStNo: State No
+INT iGrpNo,iStNo
+
+; RETURN: TRUE --> Continue the process (crash danger)
+; RETURN: FALSE --> Stop the process
+
+RETURN FALSE
+ENDFCT
+
+GLOBAL DEFFCT BOOL GRPg_UserCondition (iGrpNo:IN, iStNo:IN, iCondNo:IN)
+
+  INT iCondNo, iGrpNo, iStNo
+  BOOL bUserCondOK
+  
+  bUserCondOK=FALSE
+  SWITCH  iCondNo
+    CASE 1 ;Condition 1
+      bUserCondOK= bUserCond_1(iGrpNo,iStNo)
+    CASE 2 ;Condition 2
+      bUserCondOK= bUserCond_2(iGrpNo,iStNo)
+    CASE 3 ;Condition 3
+      bUserCondOK= bUserCond_3(iGrpNo,iStNo)
+    CASE 4 ;Condition 4
+      bUserCondOK= bUserCond_4(iGrpNo,iStNo)
+    CASE 5 ;Condition 5
+      bUserCondOK= bUserCond_5(iGrpNo,iStNo)
+    CASE 6 ;Condition 6
+      bUserCondOK= bUserCond_6(iGrpNo,iStNo)
+    CASE 7 ;Condition 7
+      bUserCondOK= bUserCond_7(iGrpNo,iStNo)
+    CASE 8 ;Condition 8
+      bUserCondOK= bUserCond_8(iGrpNo,iStNo)
+    CASE 9 ;Condition 9
+      bUserCondOK= bUserCond_9(iGrpNo,iStNo)
+    CASE 10 ;Condition 10
+      bUserCondOK= bUserCond_10(iGrpNo,iStNo)
+    DEFAULT
+      bUserCondOK=FALSE
+      MsgNotify ("UnKnownUserCondition",Grp_KxrModule[])
+  ENDSWITCH
+  RETURN(bUserCondOK)
+ENDFCT
+
+DEFFCT BOOL bUserCond_1 (iGrpNo:IN,iStNo:IN)
+  ;User Condition 1
+  INT iGrpNo, iStNo
+  
+  ;MsgNotify("UserCondition1NotOK",Grp_KxrModule[])
+  RETURN FALSE
+ENDFCT
+
+DEFFCT BOOL bUserCond_2 (iGrpNo:IN,iStNo:IN)
+  ;User Condition 2
+  INT iGrpNo, iStNo
+  
+  ;MsgNotify("UserCondition2NotOK",Grp_KxrModule[])
+  RETURN FALSE
+ENDFCT
+
+DEFFCT BOOL bUserCond_3 (iGrpNo:IN,iStNo:IN)
+  ;User Condition 3
+  INT iGrpNo, iStNo
+  
+  ;MsgNotify("UserCondition3NotOK",Grp_KxrModule[])
+  RETURN FALSE
+ENDFCT
+
+DEFFCT BOOL bUserCond_4 (iGrpNo:IN,iStNo:IN)
+  ;User Condition 4
+  INT iGrpNo, iStNo
+  
+  ;MsgNotify("UserCondition4NotOK",Grp_KxrModule[])
+  RETURN FALSE
+ENDFCT
+
+DEFFCT BOOL bUserCond_5 (iGrpNo:IN,iStNo:IN)
+  ;User Condition 5
+  INT iGrpNo, iStNo
+  
+  ;MsgNotify("UserCondition5NotOK",Grp_KxrModule[])
+  RETURN FALSE
+ENDFCT
+
+DEFFCT BOOL bUserCond_6 (iGrpNo:IN,iStNo:IN)
+  ;User Condition 6
+  INT iGrpNo, iStNo
+  
+  ;MsgNotify("UserCondition6NotOK",Grp_KxrModule[])
+  RETURN FALSE
+ENDFCT
+
+DEFFCT BOOL bUserCond_7 (iGrpNo:IN,iStNo:IN)
+  ;User Condition 7
+  INT iGrpNo, iStNo
+  
+  ;MsgNotify("UserCondition7NotOK",Grp_KxrModule[])
+  RETURN FALSE
+ENDFCT
+
+DEFFCT BOOL bUserCond_8 (iGrpNo:IN,iStNo:IN)
+  ;User Condition 8
+  INT iGrpNo, iStNo
+  
+  ;MsgNotify("UserCondition8NotOK",Grp_KxrModule[])
+  RETURN FALSE
+ENDFCT
+
+DEFFCT BOOL bUserCond_9 (iGrpNo:IN,iStNo:IN)
+  ;User Condition 9
+  INT iGrpNo, iStNo
+  
+  ;MsgNotify("UserCondition9NotOK",Grp_KxrModule[])
+  RETURN FALSE
+ENDFCT
+
+DEFFCT BOOL bUserCond_10 (iGrpNo:IN,iStNo:IN)
+  ;User Condition 10
+  INT iGrpNo, iStNo
+  
+  ;MsgNotify("UserCondition10NotOK",Grp_KxrModule[])
+  RETURN FALSE
+ENDFCT
+
+GLOBAL DEF GRP_USR_PreSetState(iGrpNo:IN, iStNo:IN)
+  INT iGrpNo, iStNo
+  ;called from pre GRPg_SetState()
+  ;Enter your code here
+
+END ;GRP_USR_PreSetState
+
+GLOBAL DEF GRP_USR_PostSetState(iGrpNo:IN, iStNo:IN)
+  INT iGrpNo, iStNo
+  ;called from post GRPg_SetState()
+  ;Enter your code here
+
+END ;GRP_USR_PostSetState
+
+GLOBAL DEF GRP_USR_PreSetStAndChk(iGrpNo:IN, iStNo:IN, rWaitTime:IN, iCheckAndStrategy:IN)
+  ;called from pre GRPg_SetStateAndCheck()
+  INT iGrpNo, iStNo, iCheckAndStrategy
+  REAL rWaitTime
+ ;Enter your code here
+
+END ;GRP_USR_PreSetStAndChk
+
+GLOBAL DEF GRP_USR_PostSetStAndChk(iGrpNo:IN, iStNo:IN, rWaitTime:IN, iCheckAndStrategy:IN)
+  ;called from post GRPg_SetStateAndCheck()
+  INT iGrpNo, iStNo, iCheckAndStrategy
+  REAL rWaitTime
+  ;Enter your code here
+  ;iCheckAndStrategy=0 -> No Check no Strategy
+ 
+END ;GRP_USR_PostSetStAndChk
+
+GLOBAL DEF GRP_USR_PreCheckState(iGrpNo:IN ,iStNo:IN, bCont:IN, iErrStrategy:IN)
+  INT iGrpNo, iStNo, iErrStrategy
+  BOOL bCont
+  ;called from pre GRPg_SetState()
+  ;Enter your code here
+
+END ;GRP_USR_PreCheckState
+
+GLOBAL DEF GRP_USR_Post1CheckState(iGrpNo:IN ,iStNo:IN, bStateIsOK:IN)
+  INT iGrpNo, iStNo
+  BOOL bStateIsOK
+  ;called from post GRPg_SetState(), before strategy
+  ;Enter your code here
+
+END ;GRP_USR_Post1CheckState
+
+GLOBAL DEF GRP_USR_Post2CheckState(iGrpNo:IN ,iStNo:IN, bStateIsOK:IN)
+  INT iGrpNo, iStNo
+  BOOL bStateIsOK
+  ;called from post GRPg_SetState(), after strategy
+  ;Enter your code here
+
+END ;GRP_USR_Post2CheckState
+
+GLOBAL DEF GRP_USR_PreSynCheck(iGrpNo:IN ,iStNo:IN, iErrStrategy:IN)
+  INT iGrpNo, iStNo, iErrStrategy
+  ;called from pre GRPg_SynCheck()
+  ;Enter your code here
+
+END ;GRP_USR_PreSynCheck
+
+GLOBAL DEF GRP_USR_Post1SynCheck(iGrpNo:IN ,iStNo:IN, bStateIsOK:IN)
+  INT iGrpNo, iStNo
+  BOOL bStateIsOK
+  ;called from post GRPg_SynCheck(), before strategy
+  ;Enter your code here
+
+END ;GRP_USR_Post1SynCheck
+
+GLOBAL DEF GRP_USR_Post2SynCheck(iGrpNo:IN ,iStNo:IN, bStateIsOK:IN)
+  INT iGrpNo, iStNo
+  BOOL bStateIsOK
+  ;called from post GRPg_SynCheck(), after strategy
+  ;Enter your code here
+
+END ;GRP_USR_Post2SynCheck

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- *********************** -->
+<!-- Manual mode             -->
+<!-- *********************** -->
+<ManualMode xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="manual_mode.xsd">
+  <Version Label="1">
+    <Schema Version="1" />
+  </Version>
+
+  <!-- Number of the physical hand wheels - 'hr_anzahl' -->
+  <P-MANU-00001 Value="1"/>
+  <!-- Count of inching key pairs - 'tasten_anzahl' -->
+  <P-MANU-00008 Value="7"/>
+  
+  <Feedhold>
+    <!-- Operating mode hand wheel - discarding of handwheel increments during feedhold - 'hr_inkr_verwerfen' -->
+    <P-MANU-00010 Value="0"/>
+    <!-- Operating mode jogging mode - discarding of jog mode traverse increments during feedhold - 'jog_inkr_verwerfen' -->
+    <P-MANU-00011 Value="0"/>
+  </Feedhold>
+
+  <HandWheel>
+    <HandWheelIndex Value="0">
+      <!-- Logic hand wheel number - 'log_hr_nr' -->
+      <P-MANU-00002 Value="1"/>      
+      <!-- Access to hand wheel counter address - 'hr_zaehler_direct_access' -->
+      <P-MANU-00003 Value="0"/>
+      <!-- Address of hand wheel counter - 'adr_hr_zaehler' -->
+      <P-MANU-00004 Value="0x0000"/>
+      <!-- Numerator of hand wheel resolution - 'hr_aufl_z' -->
+      <P-MANU-00005 Value="1"/>
+      <!-- Denominator of hand wheel resolution - 'hr_aufl_n' -->
+      <P-MANU-00006 Value="1000"/>
+      <!-- Upper limit for hand wheel increments - maximum number of increments/cycle - 'max_inkr_pro_takt' -->
+      <P-MANU-00007 Value="100000"/>
+    </HandWheelIndex>
+  </HandWheel>
+
+  <Keys>
+    <KeyIndex Value="0">
+      <!-- Logic number of inching key pair - 'log_tasten_nr' -->
+      <P-MANU-00009 Value="1"/>
+    </KeyIndex>
+    <KeyIndex Value="1">
+      <!-- Logic number of inching key pair - 'log_tasten_nr' -->
+      <P-MANU-00009 Value="2"/>
+    </KeyIndex>
+    <KeyIndex Value="2">
+      <!-- Logic number of inching key pair - 'log_tasten_nr' -->
+      <P-MANU-00009 Value="3"/>
+    </KeyIndex>
+    <KeyIndex Value="3">
+      <!-- Logic number of inching key pair - 'log_tasten_nr' -->
+      <P-MANU-00009 Value="4"/>
+    </KeyIndex>
+    <KeyIndex Value="4">
+      <!-- Logic number of inching key pair - 'log_tasten_nr' -->
+      <P-MANU-00009 Value="5"/>
+    </KeyIndex>
+    <KeyIndex Value="5">
+      <!-- Logic number of inching key pair - 'log_tasten_nr' -->
+      <P-MANU-00009 Value="6"/>
+    </KeyIndex>
+    <KeyIndex Value="6">
+      <!-- Logic number of inching key pair - 'log_tasten_nr' -->
+      <P-MANU-00009 Value="7"/>
+    </KeyIndex>
+  </Keys>
+</ManualMode>
