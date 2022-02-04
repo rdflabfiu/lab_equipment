@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CtrlParam xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="/Roboter/Config/System/Common/Schemes/NGCtrl.xsd">
+   <Version Label="1">
+      <Info Version="KUKA V8.3"/>
+      <Schema Version="1"/>
+   </Version>
+   <Machine Name="#KR210R2700 EXTRA C4 FLR"/>
+   <Controller ID="2"/>
+   <GlobalParameter Access="ro" EvalBoundary="Min" Index="0" MaxValue="0" MinValue="0" Name="CmdPosDelay" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="MinMax" Index="1" MaxValue="1" MinValue="0" Name="FFCVelocity" Value="1"/>
+   <GlobalParameter Access="ro" EvalBoundary="MinMax" Index="2" MaxValue="1" MinValue="0" Name="FFCTorque" Value="1"/>
+   <GlobalParameter Access="ro" EvalBoundary="Min" Index="3" MaxValue="0" MinValue="1" Name="CtrlCycle" Value="1"/>
+   <GlobalParameter Access="ro" EvalBoundary="Min" Index="5" MaxValue="0" MinValue="0" Name="CtrlOffset" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="9" MaxValue="0" MinValue="0" Name="MECHPARAM0002" Value="6000"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="10" MaxValue="0" MinValue="0" Name="MECHPARAM0003" Value="2800001"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="11" MaxValue="0" MinValue="0" Name="MECHPARAM0004" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="12" MaxValue="0" MinValue="0" Name="MECHPARAM0005" Value="0.75"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="13" MaxValue="0" MinValue="0" Name="MECHPARAM0006" Value="1.25"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="14" MaxValue="0" MinValue="0" Name="MECHPARAM0007" Value="0.25"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="15" MaxValue="0" MinValue="0" Name="MECHPARAM0008" Value="0.6"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="16" MaxValue="0" MinValue="0" Name="MECHPARAM0009" Value="1.5"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="17" MaxValue="0" MinValue="0" Name="MECHPARAM0010" Value="0.5"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="100" MaxValue="0" MinValue="0" Name="MECHPARAM0011" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="101" MaxValue="0" MinValue="0" Name="MECHPARAM0012" Value="-1"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="102" MaxValue="0" MinValue="0" Name="MECHPARAM0013" Value="24"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="103" MaxValue="0" MinValue="0" Name="MECHPARAM0014" Value="8"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="104" MaxValue="0" MinValue="0" Name="MECHPARAM0015" Value="4"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="105" MaxValue="0" MinValue="0" Name="MECHPARAM0016" Value="1"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="106" MaxValue="0" MinValue="0" Name="MECHPARAM0017" Value="1"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="107" MaxValue="0" MinValue="0" Name="MECHPARAM0018" Value="0.1"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="108" MaxValue="0" MinValue="0" Name="MECHPARAM0019" Value="2"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="109" MaxValue="0" MinValue="0" Name="MECHPARAM0020" Value="20"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="110" MaxValue="0" MinValue="0" Name="MECHPARAM0021" Value="0.03"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="111" MaxValue="0" MinValue="0" Name="MECHPARAM0022" Value="0.01"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="120" MaxValue="0" MinValue="0" Name="MECHPARAM0023" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="121" MaxValue="0" MinValue="0" Name="MECHPARAM0024" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="122" MaxValue="0" MinValue="0" Name="MECHPARAM0025" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="123" MaxValue="0" MinValue="0" Name="MECHPARAM0026" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="124" MaxValue="0" MinValue="0" Name="MECHPARAM0027" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="125" MaxValue="0" MinValue="0" Name="MECHPARAM0028" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="126" MaxValue="0" MinValue="0" Name="MECHPARAM0029" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="127" MaxValue="0" MinValue="0" Name="MECHPARAM0030" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="130" MaxValue="0" MinValue="0" Name="MECHPARAM0031" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="131" MaxValue="0" MinValue="0" Name="MECHPARAM0032" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="132" MaxValue="0" MinValue="0" Name="MECHPARAM0033" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="133" MaxValue="0" MinValue="0" Name="MECHPARAM0034" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="134" MaxValue="0" MinValue="0" Name="MECHPARAM0035" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="135" MaxValue="0" MinValue="0" Name="MECHPARAM0036" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="136" MaxValue="0" MinValue="0" Name="MECHPARAM0037" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="137" MaxValue="0" MinValue="0" Name="MECHPARAM0038" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="138" MaxValue="0" MinValue="0" Name="MECHPARAM0039" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="139" MaxValue="0" MinValue="0" Name="MECHPARAM0040" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="140" MaxValue="0" MinValue="0" Name="MECHPARAM0041" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="141" MaxValue="0" MinValue="0" Name="MECHPARAM0042" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="142" MaxValue="0" MinValue="0" Name="MECHPARAM0043" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="143" MaxValue="0" MinValue="0" Name="MECHPARAM0044" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="144" MaxValue="0" MinValue="0" Name="MECHPARAM0045" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="145" MaxValue="0" MinValue="0" Name="MECHPARAM0046" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="146" MaxValue="0" MinValue="0" Name="MECHPARAM0047" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="147" MaxValue="0" MinValue="0" Name="MECHPARAM0048" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="148" MaxValue="0" MinValue="0" Name="MECHPARAM0049" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="149" MaxValue="0" MinValue="0" Name="MECHPARAM0050" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="150" MaxValue="0" MinValue="0" Name="MECHPARAM0051" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="151" MaxValue="0" MinValue="0" Name="MECHPARAM0052" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="152" MaxValue="0" MinValue="0" Name="MECHPARAM0053" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="153" MaxValue="0" MinValue="0" Name="MECHPARAM0054" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="154" MaxValue="0" MinValue="0" Name="MECHPARAM0055" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="155" MaxValue="0" MinValue="0" Name="MECHPARAM0056" Value="0"/>
+   <GlobalParameter Access="ro" EvalBoundary="Off" Index="200" MaxValue="0" MinValue="0" Name="MECHPARAM0059" Value="500"/>
+   <Parameter Access="rw" EvalBoundary="Min" Index="0" MaxValue="0" MinValue="0" Name="PosGain">
+      <Set Name="PTP" Value="82.5"/>
+      <Set Name="CP" Value="82.5"/>
+   </Parameter>
+   <Parameter Access="rw" EvalBoundary="Min" Index="1" MaxValue="0" MinValue="0" Name="PosIntTime">
+      <Set Name="PTP" Value="0"/>
+      <Set Name="CP" Value="0"/>
+   </Parameter>
+   <Parameter Access="rw" EvalBoundary="Min" Index="2" MaxValue="0" MinValue="0" Name="VelGain">
+      <Set Name="PTP" Value="0.0204"/>
+      <Set Name="CP" Value="0.0204"/>
+   </Parameter>
+   <Parameter Access="rw" EvalBoundary="Min" Index="3" MaxValue="0" MinValue="0" Name="VelIntTime">
+      <Set Name="PTP" Value="0.37"/>
+      <Set Name="CP" Value="0.3"/>
+   </Parameter>
+   <DefaultController PosGain="85.5" PosIntTime="0" VelGain="0.055" VelIntTime="0.5"/>
+</CtrlParam>

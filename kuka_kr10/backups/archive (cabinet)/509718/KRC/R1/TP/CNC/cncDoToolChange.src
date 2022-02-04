@@ -1,0 +1,70 @@
+&ACCESS  RV
+&PARAM DISKPATH = TP/CNC
+&PARAM TEMPLATE = C:\KRC\Roboter\Template\vorgabe
+&PARAM EDITMASK = *
+&REL 2
+DEF cncDoToolChange(cncNewTool : IN)
+
+INT cncNewTool
+;INT cncLastBase
+;DECL E6Axis cncLastAxPos
+
+	;save the last cnc position into a temorary variable
+	;cncLastAxPos = $axis_act
+	;save the last base number
+	;cncLastBase = $act_base
+	
+	;do tool change only when the new tool is different to the old tool
+	;IF (cncOldTool <> cncNewTool) THEN
+	   ; unload the old tool first
+	   ;switch cncOldTool
+
+		  ;case 1
+			 ;teach here the points to unload tool 1
+			 ;ptp ...
+
+		  ;case 2
+			 ;teach here the points to unload tool 2
+			 ;ptp ...
+
+		  ;default
+			 ;loop
+				;wrong tool number
+				;halt
+			 ;endloop
+
+	   ;endswitch
+	   
+	   ;cncOldTool=0
+
+	   ;load the new tool
+	   ;switch cncNewTool
+	   
+		  ;case 1
+			 ;teach here the points to load tool 1
+			 ;ptt ...
+			 ;cncOldTool=1
+
+		  ;case 2
+			 ;teach here the points to load tool 2
+			 ;ptp ...
+			 ;cncOldTool=2
+
+		  ;default
+			 ;loop
+				;wrong tool number
+				;halt
+			 ;endloop
+	   ;endwitch
+	   
+	   
+	   ;Load the last cnc base
+	   ;please be sure the value in CncLastBase is the correct
+	   ;this bas call will just work with fixed bases, not with external kinamatic bases
+	   ;bas(#base, cncLastBase)
+	   
+	   ;move to the last cnc position
+	   ;ptp cncLastAxPos
+	   
+	;ENDIF
+END

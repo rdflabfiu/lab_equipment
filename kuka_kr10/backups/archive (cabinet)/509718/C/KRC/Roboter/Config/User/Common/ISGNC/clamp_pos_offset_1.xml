@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- ************************** -->
+<!-- Clamp position offset data -->
+<!-- ************************** -->
+<ClampPosOffset  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="clamp_pos_offset.xsd">
+
+  <Version Label="1">
+    <Schema Version="1" />
+  </Version>
+
+  <ClampPosOffsetGroup>
+
+    <!-- Group 1 -->
+    <GroupIndex Value="0">
+      <AxisIndex Value="0">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+      <AxisIndex Value="1">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+      <AxisIndex Value="2">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+    </GroupIndex>
+    
+    <!-- Group 2 -->
+    <GroupIndex Value="1">
+      <AxisIndex Value="0">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+      <AxisIndex Value="1">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+      <AxisIndex Value="2">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+    </GroupIndex>
+    
+    <!-- Group 3 -->
+    <GroupIndex Value="2">
+      <AxisIndex Value="0">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+      <AxisIndex Value="1">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+      <AxisIndex Value="2">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+    </GroupIndex>
+
+    <!-- Group 4 -->
+    <GroupIndex Value="3">
+      <AxisIndex Value="0">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+      <AxisIndex Value="1">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+      <AxisIndex Value="2">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+    </GroupIndex>
+
+    <!-- Group 5 -->
+    <GroupIndex Value="4">
+      <AxisIndex Value="0">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+      <AxisIndex Value="1">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+      <AxisIndex Value="2">
+        <!-- Axis offset - 'versatz' -->
+        <P-CLMP-00001 Value="0" />
+      </AxisIndex>
+    </GroupIndex>
+
+  </ClampPosOffsetGroup>
+  
+</ClampPosOffset>

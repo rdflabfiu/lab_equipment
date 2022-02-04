@@ -1,0 +1,11 @@
+&ACCESS  R
+&PARAM DISKPATH = Program
+DEF TM_USERACTION( )
+
+;===================
+; Stop robot
+;===================
+
+HALT
+
+END

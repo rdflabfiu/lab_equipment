@@ -1,0 +1,304 @@
+
+107) mc_error_message_r        (1638904727) : 
+
+
+(Date/Time): 05.12.2019 / 05:23:50
+Version: V300.SBV.01.06  Modul: BAHN_INO.C    Cycle: 1638904684
+------------------------------------------------------------
+@ERRTXT:  Bis zum Anfang zurueckgefahren, weiteres Rueckwaertsfahren nicht moeglich. Ggf. Speicher erhoehen
+------------------------------------------------------------
+Error-ID   : 50449       BF-Typ : 3                    Channel-ID   : 1
+Mehrfach-ID : 1           Line   : 15048                Kommu-ID   : 45
+Behebungsklasse: 0       Reaktionsklasse: 1     Rumpftyp:   1
+NC-File    : log. Pfadnr. 0 -> 
+NC-Programm: 
+NC-Proginfo: 
+Satznummer : 0           Fileoffset: 0                Satzoffset: 0
+--------------------- NC_Satz ------------------------------
+Ausgabe nicht moeglich! log_pfad_nr nicht in Zuordnungstabelle.
+
+217) mc_error_message_value_r  (1638904730) : 
+Wert_1: Aktueller Wert ist FALSE [-]
+------------- Ende der Fehlermeldung -----------------------
+
+
+
+107) mc_error_message_r        (47100) : 
+
+
+(Date/Time): 05.12.2019 / 05:56:06
+Version: V300.SBV.01.06  Modul: DEC_ABLS.C    Cycle: 47094
+------------------------------------------------------------
+@ERRTXT:  Kanalparameter: Synchronisationsmode nicht erlaubt.
+------------------------------------------------------------
+Error-ID   : 20965       BF-Typ : 9                    Channel-ID   : 1
+Mehrfach-ID : 4           Line   : 6313                 Kommu-ID   : 42
+Behebungsklasse: 0       Reaktionsklasse: 1     Rumpftyp:   2
+siehe Liste: SDA-MDS     Element: "m3_synch" 
+
+217) mc_error_message_value_r  (47110) : 
+Wert_1: Aktueller Wert ist 0 [-]
+Wert_2: Fehlerhafter Wert ist 8519680 [-]
+Wert_3: Korrigierter Wert ist 2 [-]
+------------- Ende der Fehlermeldung -----------------------
+
+
+
+107) mc_error_message_r        (69424) : 
+
+
+(Date/Time): 05.12.2019 / 05:57:35
+Version: V300.SBV.01.06  Modul: DECU_TRF.C    Cycle: 69374
+------------------------------------------------------------
+@ERRTXT:  Kinematische Transformation: Unzulaessige Achspositionen.
+------------------------------------------------------------
+Error-ID   : 292011      BF-Typ : 9                    Channel-ID   : 1
+Mehrfach-ID : 1           Line   : 2559                 Kommu-ID   : 42
+Behebungsklasse: 2       Reaktionsklasse: 2     Rumpftyp:   1
+-------------- Kennung der Dienstfunktion ------------------
+Error-ID   : 19          Modul :                      Line    : 0      
+ERRUTILTXT:  Error-ID     19 not in file isgnc\error\err_text.txt 
+
+NC-File    : log. Pfadnr. 2 -> isg_ch1_sub_prog_start.nc
+NC-Programm: isg_sub_prog_start
+NC-Proginfo: 
+Satznummer : 21          Fileoffset: 1645             Satzoffset: 15
+--------------------- NC_Satz ------------------------------
+>              ?
+N021 #TRAFO ON
+
+217) mc_error_message_value_r  (69432) : 
+Wert_1: Aktueller Wert ist 71 [-]
+Kennung_1: ist 19
+------------- Ende der Fehlermeldung -----------------------
+
+
+
+107) mc_error_message_r        (69436) : 
+
+
+(Date/Time): 05.12.2019 / 05:57:35
+Version: V300.SBV.01.06  Modul: DECU_TRF.C    Cycle: 69374
+------------------------------------------------------------
+@ERRTXT:  Aktuelle MKS-Eingangsposition der kinematischen Vorwaertstransformation.
+------------------------------------------------------------
+Error-ID   : 292034      BF-Typ : 9                    Channel-ID   : 1
+Mehrfach-ID : 2           Line   : 2559                 Kommu-ID   : 42
+Behebungsklasse: 2       Reaktionsklasse: 2     Rumpftyp:   1
+NC-File    : log. Pfadnr. 2 -> isg_ch1_sub_prog_start.nc
+NC-Programm: isg_sub_prog_start
+NC-Proginfo: 
+Satznummer : 21          Fileoffset: 1645             Satzoffset: 15
+--------------------- NC_Satz ------------------------------
+>              ?
+N021 #TRAFO ON
+
+217) mc_error_message_value_r  (69441) : 
+Wert_1: Aktueller Wert ist -2552.00 / -726314.00 / 1211181.00 [0.1*10^-3 mm bzw. ø]
+Wert_2: Aktueller Wert ist -182.00 / -444507.00 / 26050.00 [0.1*10^-3 mm bzw. ø]
+Wert_3: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+Wert_4: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+Wert_5: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+------------- Ende der Fehlermeldung -----------------------
+
+
+
+107) mc_error_message_r        (69443) : 
+
+
+(Date/Time): 05.12.2019 / 05:57:35
+Version: V300.SBV.01.06  Modul: DECU_TRF.C    Cycle: 69374
+------------------------------------------------------------
+@ERRTXT:  Aktuelle WKS-Ausgangsposition der kinematischen Vorwaertstransformation.
+------------------------------------------------------------
+Error-ID   : 292035      BF-Typ : 9                    Channel-ID   : 1
+Mehrfach-ID : 3           Line   : 2559                 Kommu-ID   : 42
+Behebungsklasse: 2       Reaktionsklasse: 2     Rumpftyp:   1
+NC-File    : log. Pfadnr. 2 -> isg_ch1_sub_prog_start.nc
+NC-Programm: isg_sub_prog_start
+NC-Proginfo: 
+Satznummer : 21          Fileoffset: 1645             Satzoffset: 15
+--------------------- NC_Satz ------------------------------
+>              ?
+N021 #TRAFO ON
+
+217) mc_error_message_value_r  (69450) : 
+Wert_1: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+Wert_2: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+Wert_3: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+Wert_4: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+Wert_5: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+------------- Ende der Fehlermeldung -----------------------
+
+
+
+107) mc_error_message_r        (79799) : 
+
+
+(Date/Time): 05.12.2019 / 05:58:16
+Version: V300.SBV.01.06  Modul: DECU_TRF.C    Cycle: 79738
+------------------------------------------------------------
+@ERRTXT:  Kinematische Transformation: Unzulaessige Achspositionen.
+------------------------------------------------------------
+Error-ID   : 292011      BF-Typ : 9                    Channel-ID   : 1
+Mehrfach-ID : 1           Line   : 2559                 Kommu-ID   : 42
+Behebungsklasse: 2       Reaktionsklasse: 2     Rumpftyp:   1
+-------------- Kennung der Dienstfunktion ------------------
+Error-ID   : 19          Modul :                      Line    : 0      
+ERRUTILTXT:  Error-ID     19 not in file isgnc\error\err_text.txt 
+
+NC-File    : log. Pfadnr. 2 -> isg_ch1_sub_prog_start.nc
+NC-Programm: isg_sub_prog_start
+NC-Proginfo: 
+Satznummer : 21          Fileoffset: 1645             Satzoffset: 15
+--------------------- NC_Satz ------------------------------
+>              ?
+N021 #TRAFO ON
+
+217) mc_error_message_value_r  (79808) : 
+Wert_1: Aktueller Wert ist 71 [-]
+Kennung_1: ist 19
+------------- Ende der Fehlermeldung -----------------------
+
+
+
+107) mc_error_message_r        (79812) : 
+
+
+(Date/Time): 05.12.2019 / 05:58:16
+Version: V300.SBV.01.06  Modul: DECU_TRF.C    Cycle: 79738
+------------------------------------------------------------
+@ERRTXT:  Aktuelle MKS-Eingangsposition der kinematischen Vorwaertstransformation.
+------------------------------------------------------------
+Error-ID   : 292034      BF-Typ : 9                    Channel-ID   : 1
+Mehrfach-ID : 2           Line   : 2559                 Kommu-ID   : 42
+Behebungsklasse: 2       Reaktionsklasse: 2     Rumpftyp:   1
+NC-File    : log. Pfadnr. 2 -> isg_ch1_sub_prog_start.nc
+NC-Programm: isg_sub_prog_start
+NC-Proginfo: 
+Satznummer : 21          Fileoffset: 1645             Satzoffset: 15
+--------------------- NC_Satz ------------------------------
+>              ?
+N021 #TRAFO ON
+
+217) mc_error_message_value_r  (79818) : 
+Wert_1: Aktueller Wert ist -2551.00 / -726314.00 / 1211181.00 [0.1*10^-3 mm bzw. ø]
+Wert_2: Aktueller Wert ist -183.00 / -444508.00 / 26051.00 [0.1*10^-3 mm bzw. ø]
+Wert_3: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+Wert_4: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+Wert_5: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+------------- Ende der Fehlermeldung -----------------------
+
+
+
+107) mc_error_message_r        (79822) : 
+
+
+(Date/Time): 05.12.2019 / 05:58:17
+Version: V300.SBV.01.06  Modul: DECU_TRF.C    Cycle: 79738
+------------------------------------------------------------
+@ERRTXT:  Aktuelle WKS-Ausgangsposition der kinematischen Vorwaertstransformation.
+------------------------------------------------------------
+Error-ID   : 292035      BF-Typ : 9                    Channel-ID   : 1
+Mehrfach-ID : 3           Line   : 2559                 Kommu-ID   : 42
+Behebungsklasse: 2       Reaktionsklasse: 2     Rumpftyp:   1
+NC-File    : log. Pfadnr. 2 -> isg_ch1_sub_prog_start.nc
+NC-Programm: isg_sub_prog_start
+NC-Proginfo: 
+Satznummer : 21          Fileoffset: 1645             Satzoffset: 15
+--------------------- NC_Satz ------------------------------
+>              ?
+N021 #TRAFO ON
+
+217) mc_error_message_value_r  (79827) : 
+Wert_1: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+Wert_2: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+Wert_3: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+Wert_4: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+Wert_5: Aktueller Wert ist 0.00 / 0.00 / 0.00 [0.1*10^-3 mm bzw. ø]
+------------- Ende der Fehlermeldung -----------------------
+
+
+
+107) mc_error_message_r        (2108768) : 
+
+
+(Date/Time): 07.12.2019 / 23:48:36
+Version: V300.SBV.01.06  Modul: DEC_ABLS.C    Cycle: 1317
+------------------------------------------------------------
+@ERRTXT:  Kanalparameter: Synchronisationsmode nicht erlaubt.
+------------------------------------------------------------
+Error-ID   : 20965       BF-Typ : 9                    Channel-ID   : 1
+Mehrfach-ID : 4           Line   : 6313                 Kommu-ID   : 42
+Behebungsklasse: 0       Reaktionsklasse: 1     Rumpftyp:   2
+siehe Liste: SDA-MDS     Element: "m3_synch" 
+
+217) mc_error_message_value_r  (2108776) : 
+Wert_1: Aktueller Wert ist 0 [-]
+Wert_2: Fehlerhafter Wert ist 8519680 [-]
+Wert_3: Korrigierter Wert ist 2 [-]
+------------- Ende der Fehlermeldung -----------------------
+
+
+
+107) mc_error_message_r        (2108796) : 
+
+
+(Date/Time): 07.12.2019 / 23:48:36
+Version: V300.SBV.01.06  Modul: DEC_ABLS.C    Cycle: 2108790
+------------------------------------------------------------
+@ERRTXT:  Kanalparameter: Spindelanzahl und Anzahl konf. Spindelachsen stimmen nicht ueberein.
+------------------------------------------------------------
+Error-ID   : 20418       BF-Typ : 9                    Channel-ID   : 1
+Mehrfach-ID : 0           Line   : 7060                 Kommu-ID   : 42
+Behebungsklasse: 0       Reaktionsklasse: 1     Rumpftyp:   2
+siehe Liste: SDA-MDS     Element: "spdl_anzahl" 
+
+217) mc_error_message_value_r  (2108809) : 
+Wert_1: Aktueller Wert ist 0 [-]
+Wert_2: Erwarteter Wert ist 1 [-]
+Wert_3: Korrigierter Wert ist 1 [-]
+------------- Ende der Fehlermeldung -----------------------
+
+
+
+107) mc_error_message_r        (2108815) : 
+
+
+(Date/Time): 07.12.2019 / 23:48:36
+Version: V300.SBV.01.06  Modul: DEC_ABLS.C    Cycle: 2108790
+------------------------------------------------------------
+@ERRTXT:  Kanalparameter: Achsanzahl und Anzahl konf. Bahnachsen stimmen nicht ueberein.
+------------------------------------------------------------
+Error-ID   : 20428       BF-Typ : 9                    Channel-ID   : 1
+Mehrfach-ID : 0           Line   : 7632                 Kommu-ID   : 42
+Behebungsklasse: 0       Reaktionsklasse: 1     Rumpftyp:   2
+siehe Liste: SDA-MDS     Element: "...gruppe[].achs_anzahl" 
+
+217) mc_error_message_value_r  (2108817) : 
+Wert_1: Aktueller Wert ist 5 [-]
+Wert_2: Erwarteter Wert ist 6 [-]
+Wert_3: Korrigierter Wert ist 6 [-]
+------------- Ende der Fehlermeldung -----------------------
+
+
+
+107) mc_error_message_r        (2108818) : 
+
+
+(Date/Time): 07.12.2019 / 23:48:36
+Version: V300.SBV.01.06  Modul: DEC_ABLS.C    Cycle: 2108790
+------------------------------------------------------------
+@ERRTXT:  Kanalparameter: Hauptspindelname mehrfach vergeben.
+------------------------------------------------------------
+Error-ID   : 21045       BF-Typ : 9                    Channel-ID   : 1
+Mehrfach-ID : 0           Line   : 7864                 Kommu-ID   : 42
+Behebungsklasse: 0       Reaktionsklasse: 1     Rumpftyp:   2
+siehe Liste: SDA-MDS     Element: "main_spindle_name." 
+
+217) mc_error_message_value_r  (2108826) : 
+Wert_1: Aktueller Wert ist S [-]
+Wert_2: Logische Achsnummer ist 32
+------------- Ende der Fehlermeldung -----------------------
+
+

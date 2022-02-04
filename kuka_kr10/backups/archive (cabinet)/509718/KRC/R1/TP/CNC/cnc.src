@@ -1,0 +1,40 @@
+&ACCESS  RV
+&PARAM DISKPATH = TP/CNC
+&PARAM EDITMASK = *
+&PARAM TEMPLATE = C:\KRC\Roboter\Template\vorgabe
+&REL 2
+DEF cnc()
+; this procedure can be called as a main program for activating the interactive CNC-mode
+
+;FOLD INI
+  ;FOLD BASISTECH INI
+    GLOBAL INTERRUPT DECL 3 WHEN $STOPMESS==TRUE DO IR_STOPM ( )
+    INTERRUPT ON 3 
+    BAS (#INITMOV,0 )
+  ;ENDFOLD (BASISTECH INI)
+  ;FOLD USER INI
+    ;Make your modifications here
+
+  ;ENDFOLD (USER INI)
+;ENDFOLD (INI)
+
+;FOLD PTP HOME  Vel= 100 % DEFAULT;%{PE}%MKUKATPBASIS,%CMOVE,%VPTP,%P 1:PTP, 2:HOME, 3:, 5:100, 7:DEFAULT
+$BWDSTART = FALSE
+PDAT_ACT=PDEFAULT
+FDAT_ACT=FHOME
+BAS (#PTP_PARAMS,100 )
+$H_POS=XHOME
+PTP  XHOME
+;ENDFOLD
+
+
+; start-positions can be teached here e.g. a position over the milling table.
+; the base of the last teached motion stays active while operating in CNC-mode
+; while the tool may be overridden by the reference tool cncReferenceTool or by
+; using the "T<cncToolIndex> M6" command in a nc-program
+
+
+; enter CNC-mode
+cncMotion()
+
+END

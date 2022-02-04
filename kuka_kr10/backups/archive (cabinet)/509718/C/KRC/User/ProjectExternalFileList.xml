@@ -1,0 +1,47 @@
+<!-- ***********************************************************************************************
+<copyright company="KUKA Roboter GmbH" file="FileConfigurationReader.cs">
+     Copyright (c) KUKA Roboter GmbH 2006 - 2012
+</copyright>
+
+<summary>
+     The configuration file to define which files to collect into WorkVisual solutions
+</summary>
+
+<automaticallyIncluded>
+   <Path>\Roboter\KRC\</Path>
+   <Path>\Roboter\Config\User\</Path>
+   <Path>\Roboter\Config\System\Common\Motor\</Path>
+   <Path>\Roboter\Config\System\Common\Mada\</Path>
+</automaticallyIncluded>
+
+<StandardExcludeFilters>
+      <string>*.dll</string>
+      <string>*.exe</string>
+      <string>*.wvs</string>
+      <string>*.asz</string>
+      <string>*.log</string>
+      <string>*.bak</string>
+      <string>*.pkg</string>
+      <string>*.kxz</string>
+</StandardExcludeFilters>
+**************************************************************************************************** -->
+
+<FileConfigSection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+  <DefaultExcludeFilters>
+  </DefaultExcludeFilters>
+
+  <FileSources>
+     <!--KSS Installation directory (usually C:\KRC) will be automatically inserted before any relative path-->
+
+     <FileSource>
+        <!--Harvest everything under C:\KRC\Roboter\Init\-->
+        <Path>\Roboter\Init\</Path>
+     </FileSource>
+
+     <FileSource>
+        <!--Harvest everything under C:\KRC\User\-->
+        <Path>\User\</Path>
+     </FileSource>
+  </FileSources>
+</FileConfigSection>
