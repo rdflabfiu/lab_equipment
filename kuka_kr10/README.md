@@ -12,6 +12,8 @@
 - [How to Backup KUKA KRC4](https://youtu.be/PtVohrofnLY?t=22)
 - [Adding a Network Drive to the KUKA KRC4 Tutorial](https://youtu.be/qu1jxcGFuNI)
 
+### Troubleshooting
+- [KUKA Robot Troubleshooting (UMich)](http://mkmra2.blogspot.com/2019/02/kuka-robot-troubleshooting-at-taubman.html)
 
 ### Teach Pendant
 - [How to Run a KUKA Robot Language Program on a Robot via USB](https://youtu.be/2aTipKnSi8k)
