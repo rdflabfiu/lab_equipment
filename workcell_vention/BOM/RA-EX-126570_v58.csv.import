@@ -1,0 +1,17 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://bhct1gh6krc3k"
+
+[deps]
+
+files=["res://GitHub/lab_equipment/workcell_vention/BOM/RA-EX-126570_v58.Item description.translation", "res://GitHub/lab_equipment/workcell_vention/BOM/RA-EX-126570_v58.Status.translation", "res://GitHub/lab_equipment/workcell_vention/BOM/RA-EX-126570_v58.Unit price.translation", "res://GitHub/lab_equipment/workcell_vention/BOM/RA-EX-126570_v58.Quantity.translation", "res://GitHub/lab_equipment/workcell_vention/BOM/RA-EX-126570_v58.Subtotal.translation", "res://GitHub/lab_equipment/workcell_vention/BOM/RA-EX-126570_v58.Currency code.translation"]
+
+source_file="res://GitHub/lab_equipment/workcell_vention/BOM/RA-EX-126570_v58.csv"
+dest_files=["res://GitHub/lab_equipment/workcell_vention/BOM/RA-EX-126570_v58.Item description.translation", "res://GitHub/lab_equipment/workcell_vention/BOM/RA-EX-126570_v58.Status.translation", "res://GitHub/lab_equipment/workcell_vention/BOM/RA-EX-126570_v58.Unit price.translation", "res://GitHub/lab_equipment/workcell_vention/BOM/RA-EX-126570_v58.Quantity.translation", "res://GitHub/lab_equipment/workcell_vention/BOM/RA-EX-126570_v58.Subtotal.translation", "res://GitHub/lab_equipment/workcell_vention/BOM/RA-EX-126570_v58.Currency code.translation"]
+
+[params]
+
+compress=true
+delimiter=0
