@@ -1,0 +1,1178 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg701"
+   inkscape:version="1.3 (0e150ed6c4, 2023-07-21)"
+   sodipodi:docname="CNC-template.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview703"
+     pagecolor="#ffffff"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.55055723"
+     inkscape:cx="422.29942"
+     inkscape:cy="842.7825"
+     inkscape:window-width="1920"
+     inkscape:window-height="1112"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs698">
+    <marker
+       id="CheckToolsAndOPMarker"
+       orient="auto"
+       refX="-4"
+       refY="-1.687441"
+       style="overflow:visible">
+      <path
+         d="m 4.588864,-1.687441 0.0,0.0 L 9.177728,0.0 c -0.73311,-0.996261 -0.728882,-2.359329 0.0,-3.374882"
+         style="fill:#000044;fill-rule:evenodd;stroke:none"
+         id="path6" />
+    </marker>
+    <marker
+       id="DrawCurveMarker"
+       orient="auto"
+       refX="-4"
+       refY="-1.687441"
+       style="overflow:visible">
+      <path
+         d="m 4.588864,-1.687441 0.0,0.0 L 9.177728,0.0 c -0.73311,-0.996261 -0.728882,-2.359329 0.0,-3.374882"
+         style="fill:#000044;fill-rule:evenodd;stroke:none"
+         id="path7" />
+    </marker>
+    <marker
+       id="DrawCurveMarker_r"
+       orient="auto"
+       refX="4"
+       refY="-1.687441"
+       style="overflow:visible">
+      <path
+         d="m -4.588864,-1.687441 0.0,0.0 L -9.177728,0.0 c 0.73311,-0.996261 0.728882,-2.359329 0.0,-3.374882"
+         style="fill:#000044;fill-rule:evenodd;stroke:none"
+         id="path8" />
+    </marker>
+    <marker
+       id="InOutPathMarker"
+       orient="auto"
+       refX="-4"
+       refY="-1.687441"
+       style="overflow:visible">
+      <path
+         d="m 4.588864,-1.687441 0.0,0.0 L 9.177728,0.0 c -0.73311,-0.996261 -0.728882,-2.359329 0.0,-3.374882"
+         style="fill:#0072a7;fill-rule:evenodd;stroke:none"
+         id="path9" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="path1"
+       style="fill:none;stroke:#000000;stroke-width:0.352777"
+       d="m 95.148743,62.01659 c 0,11.542056 -11.334521,20.898741 -25.316361,20.898741 -13.98184,0 -25.31636,-9.356685 -25.31636,-20.898741 0,-11.542056 11.674337,-18.180206 25.656177,-18.180206 13.98184,0 24.976544,6.63815 24.976544,18.180206 z"
+       sodipodi:nodetypes="sssss" />
+    <path
+       id="path2"
+       style="fill:none;stroke:#000000;stroke-width:0.352777"
+       d="M 129.81007,123.18364 A 44.006294,44.006294 0 0 1 85.803772,167.18993 44.006294,44.006294 0 0 1 41.797478,123.18364 44.006294,44.006294 0 0 1 85.803772,79.177345 44.006294,44.006294 0 0 1 129.81007,123.18364 Z" />
+    <path
+       id="path3"
+       style="fill:none;stroke:#000000;stroke-width:0.352777"
+       d="M 146.80091,79.856979 A 19.539473,24.806635 0 0 1 127.26144,104.66361 19.539473,24.806635 0 0 1 107.72196,79.856979 19.539473,24.806635 0 0 1 127.26144,55.050344 19.539473,24.806635 0 0 1 146.80091,79.856979 Z" />
+    <g
+       gcodetools="Gcodetools orientation group"
+       id="g6">
+      <g
+         gcodetools="Gcodetools orientation point (2 points)"
+         id="g4">
+        <path
+           style="stroke:none;fill:#000000;"
+           gcodetools="Gcodetools orientation point arrow"
+           d="m 0 297 l 2.9375 -6.34375 l 0.8125 1.90625 l 6.84375 -6.84375 l 0 0 l 0.6875 0.6875 l -6.84375 6.84375 l 1.90625 0.8125 z"
+           id="path4" />
+        <text
+           x="10.0"
+           y="287.0"
+           style="font-family:DejaVu Sans;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;fill:#000000;fill-opacity:1;stroke:none;font-size:10.000000px;"
+           gcodetools="Gcodetools orientation point text"
+           xml:space="preserve"
+           id="text4"><tspan
+             x="10.0"
+             y="287.0"
+             sodipodi:role="line"
+             id="tspan4">(0.0; 0.0; 0.00000)</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools orientation point (2 points)"
+         id="g5">
+        <path
+           style="stroke:none;fill:#000000;"
+           gcodetools="Gcodetools orientation point arrow"
+           d="m 100 297 l 2.9375 -6.34375 l 0.8125 1.90625 l 6.84375 -6.84375 l 0 0 l 0.6875 0.6875 l -6.84375 6.84375 l 1.90625 0.8125 z"
+           id="path5" />
+        <text
+           x="110.0"
+           y="287.0"
+           style="font-family:DejaVu Sans;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:DejaVu Sans;fill:#000000;fill-opacity:1;stroke:none;font-size:10.000000px;"
+           gcodetools="Gcodetools orientation point text"
+           xml:space="preserve"
+           id="text5"><tspan
+             x="110.0"
+             y="287.0"
+             sodipodi:role="line"
+             id="tspan5">(100.0; 0.0; -5.00000)</tspan></text>
+      </g>
+    </g>
+    <g
+       gcodetools="Gcodetools tool definition"
+       transform="translate(-63.359833,317)"
+       id="g52">
+      <path
+         gcodetools="Gcodetools tool background"
+         style="fill:#00ff00;fill-opacity:0.5;stroke:#444444"
+         d="M -20,-20 H 380 V 350 H -20 Z"
+         id="path10" />
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g11">
+        <text
+           x="0"
+           y="0"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text10"><tspan
+             x="0"
+             y="0"
+             sodipodi:role="line"
+             id="tspan10">name</tspan></text>
+        <text
+           x="150"
+           y="0"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text11"><tspan
+             x="150"
+             y="0"
+             sodipodi:role="line"
+             id="tspan11">Default tool</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g13">
+        <text
+           x="0"
+           y="20"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text12"><tspan
+             x="0"
+             y="20"
+             sodipodi:role="line"
+             id="tspan12">id</tspan></text>
+        <text
+           x="150"
+           y="20"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text13"><tspan
+             x="150"
+             y="20"
+             sodipodi:role="line"
+             id="tspan13">default tool</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g15">
+        <text
+           x="0"
+           y="35"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text14"><tspan
+             x="0"
+             y="35"
+             sodipodi:role="line"
+             id="tspan14">diameter</tspan></text>
+        <text
+           x="150"
+           y="35"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text15"><tspan
+             x="150"
+             y="35"
+             sodipodi:role="line"
+             id="tspan15">10.0</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g17">
+        <text
+           x="0"
+           y="50"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text16"><tspan
+             x="0"
+             y="50"
+             sodipodi:role="line"
+             id="tspan16">feed</tspan></text>
+        <text
+           x="150"
+           y="50"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text17"><tspan
+             x="150"
+             y="50"
+             sodipodi:role="line"
+             id="tspan17">400.0</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g19">
+        <text
+           x="0"
+           y="65"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text18"><tspan
+             x="0"
+             y="65"
+             sodipodi:role="line"
+             id="tspan18">shape</tspan></text>
+        <text
+           x="150"
+           y="65"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text19"><tspan
+             x="150"
+             y="65"
+             sodipodi:role="line"
+             id="tspan19">10</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g21">
+        <text
+           x="0"
+           y="80"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text20"><tspan
+             x="0"
+             y="80"
+             sodipodi:role="line"
+             id="tspan20">penetration angle</tspan></text>
+        <text
+           x="150"
+           y="80"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text21"><tspan
+             x="150"
+             y="80"
+             sodipodi:role="line"
+             id="tspan21">90.0</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g23">
+        <text
+           x="0"
+           y="95"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text22"><tspan
+             x="0"
+             y="95"
+             sodipodi:role="line"
+             id="tspan22">penetration feed</tspan></text>
+        <text
+           x="150"
+           y="95"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text23"><tspan
+             x="150"
+             y="95"
+             sodipodi:role="line"
+             id="tspan23">100.0</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g25">
+        <text
+           x="0"
+           y="110"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text24"><tspan
+             x="0"
+             y="110"
+             sodipodi:role="line"
+             id="tspan24">passing feed</tspan></text>
+        <text
+           x="150"
+           y="110"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text25"><tspan
+             x="150"
+             y="110"
+             sodipodi:role="line"
+             id="tspan25">800</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g27">
+        <text
+           x="0"
+           y="125"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text26"><tspan
+             x="0"
+             y="125"
+             sodipodi:role="line"
+             id="tspan26">depth step</tspan></text>
+        <text
+           x="150"
+           y="125"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text27"><tspan
+             x="150"
+             y="125"
+             sodipodi:role="line"
+             id="tspan27">5.0</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g29">
+        <text
+           x="0"
+           y="140"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text28"><tspan
+             x="0"
+             y="140"
+             sodipodi:role="line"
+             id="tspan28">in trajectotry</tspan></text>
+        <text
+           x="150"
+           y="140"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text29"><tspan
+             x="150"
+             y="140"
+             sodipodi:role="line"
+             id="tspan29">(None)</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g31">
+        <text
+           x="0"
+           y="155"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text30"><tspan
+             x="0"
+             y="155"
+             sodipodi:role="line"
+             id="tspan30">out trajectotry</tspan></text>
+        <text
+           x="150"
+           y="155"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text31"><tspan
+             x="150"
+             y="155"
+             sodipodi:role="line"
+             id="tspan31">(None)</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g33">
+        <text
+           x="0"
+           y="170"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text32"><tspan
+             x="0"
+             y="170"
+             sodipodi:role="line"
+             id="tspan32">gcode before path</tspan></text>
+        <text
+           x="150"
+           y="170"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text33"><tspan
+             x="150"
+             y="170"
+             sodipodi:role="line"
+             id="tspan33">(None)</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g35">
+        <text
+           x="0"
+           y="185"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text34"><tspan
+             x="0"
+             y="185"
+             sodipodi:role="line"
+             id="tspan34">gcode after path</tspan></text>
+        <text
+           x="150"
+           y="185"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text35"><tspan
+             x="150"
+             y="185"
+             sodipodi:role="line"
+             id="tspan35">(None)</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g37">
+        <text
+           x="0"
+           y="200"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text36"><tspan
+             x="0"
+             y="200"
+             sodipodi:role="line"
+             id="tspan36">sog</tspan></text>
+        <text
+           x="150"
+           y="200"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text37"><tspan
+             x="150"
+             y="200"
+             sodipodi:role="line"
+             id="tspan37">(None)</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g39">
+        <text
+           x="0"
+           y="215"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text38"><tspan
+             x="0"
+             y="215"
+             sodipodi:role="line"
+             id="tspan38">spinlde rpm</tspan></text>
+        <text
+           x="150"
+           y="215"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text39"><tspan
+             x="150"
+             y="215"
+             sodipodi:role="line"
+             id="tspan39">(None)</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g41">
+        <text
+           x="0"
+           y="230"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text40"><tspan
+             x="0"
+             y="230"
+             sodipodi:role="line"
+             id="tspan40">CW or CCW</tspan></text>
+        <text
+           x="150"
+           y="230"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text41"><tspan
+             x="150"
+             y="230"
+             sodipodi:role="line"
+             id="tspan41">(None)</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g43">
+        <text
+           x="0"
+           y="245"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text42"><tspan
+             x="0"
+             y="245"
+             sodipodi:role="line"
+             id="tspan42">tool change gcode</tspan></text>
+        <text
+           x="150"
+           y="245"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text43"><tspan
+             x="150"
+             y="245"
+             sodipodi:role="line"
+             id="tspan43">(None)</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g45">
+        <text
+           x="0"
+           y="260"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text44"><tspan
+             x="0"
+             y="260"
+             sodipodi:role="line"
+             id="tspan44">4th axis meaning</tspan></text>
+        <text
+           x="150"
+           y="260"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text45"><tspan
+             x="150"
+             y="260"
+             sodipodi:role="line"
+             id="tspan45">(None)</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g47">
+        <text
+           x="0"
+           y="275"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text46"><tspan
+             x="0"
+             y="275"
+             sodipodi:role="line"
+             id="tspan46">4th axis scale</tspan></text>
+        <text
+           x="150"
+           y="275"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text47"><tspan
+             x="150"
+             y="275"
+             sodipodi:role="line"
+             id="tspan47">1.0</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g49">
+        <text
+           x="0"
+           y="290"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text48"><tspan
+             x="0"
+             y="290"
+             sodipodi:role="line"
+             id="tspan48">4th axis offset</tspan></text>
+        <text
+           x="150"
+           y="290"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text49"><tspan
+             x="150"
+             y="290"
+             sodipodi:role="line"
+             id="tspan49">0.0</tspan></text>
+      </g>
+      <g
+         gcodetools="Gcodetools tool parameter"
+         id="g51">
+        <text
+           x="0"
+           y="305"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field name"
+           xml:space="preserve"
+           id="text50"><tspan
+             x="0"
+             y="305"
+             sodipodi:role="line"
+             id="tspan50">fine feed</tspan></text>
+        <text
+           x="150"
+           y="305"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10px;font-family:'DejaVu Sans';fill:#000000;fill-opacity:1;stroke:none"
+           gcodetools="Gcodetools tool definition field value"
+           xml:space="preserve"
+           id="text51"><tspan
+             x="150"
+             y="305"
+             sodipodi:role="line"
+             id="tspan51">800</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g53" />
+    <g
+       gcodetools="Preview group"
+       id="g90" />
+    <g
+       gcodetools="Preview group"
+       id="g91" />
+    <g
+       id="g92" />
+    <g
+       gcodetools="Preview group"
+       id="g128">
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="117.02821015178733"
+         sodipodi:cy="79.8569752201353"
+         sodipodi:rx="29.772699848212895"
+         sodipodi:ry="29.772699848212895"
+         sodipodi:type="arc"
+         sodipodi:start="1.2695740658763555e-07"
+         sodipodi:end="0.6671780705614927"
+         sodipodi:open="true"
+         d="m 146.801 79.857 a 29.7727 29.7727 0 0 1 -6.38413 18.4225 l -23.3886 -18.4225 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path92" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="127.2614367357751"
+         sodipodi:cy="87.91739357494373"
+         sodipodi:rx="16.7462164250566"
+         sodipodi:ry="16.7462164250566"
+         sodipodi:type="arc"
+         sodipodi:start="0.667178070561492"
+         sodipodi:end="1.5707961318717698"
+         sodipodi:open="true"
+         d="m 140.417 98.2795 a 16.7462 16.7462 0 0 1 -13.1553 6.38413 l -3.26422e-06 -16.7462 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path93" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="127.26143293736442"
+         sodipodi:cy="89.13521462161063"
+         sodipodi:rx="15.52839537839101"
+         sodipodi:ry="15.52839537839101"
+         sodipodi:type="arc"
+         sodipodi:start="1.570795871974203"
+         sodipodi:end="2.0549256242477068"
+         sodipodi:open="true"
+         d="m 127.261 104.664 a 15.5284 15.5284 0 0 1 -7.22751 -1.78451 l 7.2275 -13.7439 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path94" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="129.613589137565"
+         sodipodi:cy="84.66233496960743"
+         sodipodi:rx="20.58203675579867"
+         sodipodi:ry="20.58203675579867"
+         sodipodi:type="arc"
+         sodipodi:start="2.0549256242477014"
+         sodipodi:end="2.4744143342691105"
+         sodipodi:open="true"
+         d="m 120.034 102.879 a 20.582 20.582 0 0 1 -6.58899 -5.48118 l 16.1686 -12.7356 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path95" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="133.30656039367486"
+         sodipodi:cy="81.75348620273658"
+         sodipodi:rx="25.283040674854604"
+         sodipodi:ry="25.283040674854604"
+         sodipodi:type="arc"
+         sodipodi:start="2.474414334269075"
+         sodipodi:end="2.8262176588995"
+         sodipodi:open="true"
+         d="m 113.445 97.3979 a 25.283 25.283 0 0 1 -4.17447 -7.80232 l 24.0361 -7.84212 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path96" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="139.1193666355872"
+         sodipodi:cy="79.85697501221921"
+         sodipodi:rx="31.397406635587455"
+         sodipodi:ry="31.397406635587455"
+         sodipodi:type="arc"
+         sodipodi:start="2.8262176588995387"
+         sodipodi:end="3.1415925266323876"
+         sodipodi:open="true"
+         d="m 109.27 89.5956 a 31.3974 31.3974 0 0 1 -1.54852 -9.73862 l 31.3974 -3.98613e-06 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path97" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="139.11936742430927"
+         sodipodi:cy="79.85697899835259"
+         sodipodi:rx="31.39740742430928"
+         sodipodi:ry="31.39740742430928"
+         sodipodi:type="arc"
+         sodipodi:start="3.141592653589796"
+         sodipodi:end="3.4569675474705255"
+         sodipodi:open="true"
+         d="m 107.722 79.857 a 31.3974 31.3974 0 0 1 1.54851 -9.73862 l 29.8489 9.73862 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path98" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="133.30656176448136"
+         sodipodi:cy="77.96046864611168"
+         sodipodi:rx="25.283042276962934"
+         sodipodi:ry="25.283042276962934"
+         sodipodi:type="arc"
+         sodipodi:start="3.4569675474705517"
+         sodipodi:end="3.8087708945623273"
+         sodipodi:open="true"
+         d="m 109.27 70.1184 a 25.283 25.283 0 0 1 4.17447 -7.80232 l 19.8616 15.6444 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path99" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="129.6135897638641"
+         sodipodi:cy="75.05161976166414"
+         sodipodi:rx="20.582037700290897"
+         sodipodi:ry="20.582037700290897"
+         sodipodi:type="arc"
+         sodipodi:start="3.8087708945623024"
+         sodipodi:end="4.228259635981117"
+         sodipodi:open="true"
+         d="m 113.445 62.316 a 20.582 20.582 0 0 1 6.58899 -5.48118 l 9.57966 18.2168 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path100" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="127.26143293736452"
+         sodipodi:cy="70.57873942846814"
+         sodipodi:rx="15.528395428469658"
+         sodipodi:ry="15.528395428469658"
+         sodipodi:type="arc"
+         sodipodi:start="4.228259635981095"
+         sodipodi:end="4.712389435205376"
+         sodipodi:open="true"
+         d="m 120.034 56.8349 a 15.5284 15.5284 0 0 1 7.22751 -1.78452 l -7.06264e-06 15.5284 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path101" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="127.2614367357747"
+         sodipodi:cy="71.79656084965055"
+         sodipodi:rx="16.74621684965084"
+         sodipodi:ry="16.74621684965084"
+         sodipodi:type="arc"
+         sodipodi:start="4.712389175307837"
+         sodipodi:end="5.616007314979918"
+         sodipodi:open="true"
+         d="m 127.261 55.0503 a 16.7462 16.7462 0 0 1 13.1553 6.38413 l -13.1553 10.3621 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path102" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="117.02820876167473"
+         sodipodi:cy="79.85697899999988"
+         sodipodi:rx="29.772701238325343"
+         sodipodi:ry="29.772701238325343"
+         sodipodi:type="arc"
+         sodipodi:start="5.616007314979918"
+         sodipodi:end="6.283185307179583"
+         sodipodi:open="true"
+         d="m 140.417 61.4345 a 29.7727 29.7727 0 0 1 6.38413 18.4225 l -29.7727 1.13687e-13 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path103" />
+      <path
+         gcodetools="Preview"
+         style="stroke:#f88;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         d="M 146.801 79.857 L 146.801 79.857"
+         id="path104" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="85.80377624382467"
+         sodipodi:cy="123.1836360655305"
+         sodipodi:rx="44.0062937561755"
+         sodipodi:ry="44.0062937561755"
+         sodipodi:type="arc"
+         sodipodi:start="8.940697338033488e-08"
+         sodipodi:end="0.3926991718360899"
+         sodipodi:open="true"
+         d="m 129.81 123.184 a 44.0063 44.0063 0 0 1 -3.34978 16.8405 l -40.6565 -16.8405 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path105" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="85.80377593945758"
+         sodipodi:cy="123.18363593945844"
+         sodipodi:rx="44.006294085619835"
+         sodipodi:ry="44.006294085619835"
+         sodipodi:type="arc"
+         sodipodi:start="0.3926991718360697"
+         sodipodi:end="0.7853982535489649"
+         sodipodi:open="true"
+         d="m 126.46 140.024 a 44.0063 44.0063 0 0 1 -9.53937 14.2767 l -31.1171 -31.1172 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path106" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="85.80377600000051"
+         sodipodi:cy="123.18363600000049"
+         sodipodi:rx="44.00629399999958"
+         sodipodi:ry="44.00629399999958"
+         sodipodi:type="arc"
+         sodipodi:start="0.7853982535489794"
+         sodipodi:end="1.1780973356199886"
+         sodipodi:open="true"
+         d="m 116.921 154.301 a 44.0063 44.0063 0 0 1 -14.2767 9.53936 l -16.8405 -40.6565 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path107" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="85.80377600000006"
+         sodipodi:cy="123.18363600000026"
+         sodipodi:rx="44.006294000000004"
+         sodipodi:ry="44.006294000000004"
+         sodipodi:type="arc"
+         sodipodi:start="1.1780973356199809"
+         sodipodi:end="1.5707964176909865"
+         sodipodi:open="true"
+         d="m 102.644 163.84 a 44.0063 44.0063 0 0 1 -16.8405 3.34978 l 4e-06 -44.0063 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path108" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="85.80377199999982"
+         sodipodi:cy="123.18363600000009"
+         sodipodi:rx="44.00629399999997"
+         sodipodi:ry="44.00629399999997"
+         sodipodi:type="arc"
+         sodipodi:start="1.570796326794893"
+         sodipodi:end="2.3561944454888604"
+         sodipodi:open="true"
+         d="m 85.8038 167.19 a 44.0063 44.0063 0 0 1 -31.1171 -12.8891 l 31.1171 -31.1172 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path109" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="85.80377199999995"
+         sodipodi:cy="123.18363600000006"
+         sodipodi:rx="44.00629400000011"
+         sodipodi:ry="44.00629400000011"
+         sodipodi:type="arc"
+         sodipodi:start="2.3561944454888613"
+         sodipodi:end="3.1415925641828264"
+         sodipodi:open="true"
+         d="m 54.6866 154.301 a 44.0063 44.0063 0 0 1 -12.8891 -31.1171 l 44.0063 -3.93447e-06 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path110" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="85.80377202643953"
+         sodipodi:cy="123.18363900710636"
+         sodipodi:rx="44.00629402643954"
+         sodipodi:ry="44.00629402643954"
+         sodipodi:type="arc"
+         sodipodi:start="3.1415926325163763"
+         sodipodi:end="3.534291719444626"
+         sodipodi:open="true"
+         d="m 41.7975 123.184 a 44.0063 44.0063 0 0 1 3.34978 -16.8405 l 40.6565 16.8405 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path111" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="85.80377199343445"
+         sodipodi:cy="123.18363899343518"
+         sodipodi:rx="44.00629399071524"
+         sodipodi:ry="44.00629399071524"
+         sodipodi:type="arc"
+         sodipodi:start="3.5342917194446253"
+         sodipodi:end="3.9269908064505405"
+         sodipodi:open="true"
+         d="m 45.1473 106.343 a 44.0063 44.0063 0 0 1 9.53937 -14.2767 l 31.1171 31.1171 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path112" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="85.80377199999973"
+         sodipodi:cy="123.18363900000014"
+         sodipodi:rx="44.00629399999989"
+         sodipodi:ry="44.00629399999989"
+         sodipodi:type="arc"
+         sodipodi:start="3.926990806450535"
+         sodipodi:end="4.319689893417616"
+         sodipodi:open="true"
+         d="m 54.6866 92.0665 a 44.0063 44.0063 0 0 1 14.2767 -9.53937 l 16.8405 40.6565 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path113" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="85.80377200000004"
+         sodipodi:cy="123.18363899999991"
+         sodipodi:rx="44.006293999999905"
+         sodipodi:ry="44.006293999999905"
+         sodipodi:type="arc"
+         sodipodi:start="4.319689893417607"
+         sodipodi:end="4.712388980384688"
+         sodipodi:open="true"
+         d="m 68.9633 82.5271 a 44.0063 44.0063 0 0 1 16.8405 -3.34978 l 8.52651e-14 44.0063 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path114" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="85.80377600000023"
+         sodipodi:cy="123.18363900000065"
+         sodipodi:rx="44.0062940000008"
+         sodipodi:ry="44.0062940000008"
+         sodipodi:type="arc"
+         sodipodi:start="4.7123888894885955"
+         sodipodi:end="5.105087999179691"
+         sodipodi:open="true"
+         d="m 85.8038 79.1773 a 44.0063 44.0063 0 0 1 16.8405 3.34978 l -16.8405 40.6565 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path115" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="85.80377599999983"
+         sodipodi:cy="123.18363900000003"
+         sodipodi:rx="44.006294000000274"
+         sodipodi:ry="44.006294000000274"
+         sodipodi:type="arc"
+         sodipodi:start="5.105087999179705"
+         sodipodi:end="5.497787108870805"
+         sodipodi:open="true"
+         d="m 102.644 82.5271 a 44.0063 44.0063 0 0 1 14.2767 9.53937 l -31.1171 31.1171 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path116" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="85.80377600000025"
+         sodipodi:cy="123.18363899999983"
+         sodipodi:rx="44.00629399999985"
+         sodipodi:ry="44.00629399999985"
+         sodipodi:type="arc"
+         sodipodi:start="5.497787108870801"
+         sodipodi:end="5.890486218561906"
+         sodipodi:open="true"
+         d="m 116.921 92.0665 a 44.0063 44.0063 0 0 1 9.53937 14.2767 l -40.6565 16.8405 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path117" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="85.80377599999966"
+         sodipodi:cy="123.18363899999935"
+         sodipodi:rx="44.00629400000016"
+         sodipodi:ry="44.00629400000016"
+         sodipodi:type="arc"
+         sodipodi:start="5.890486218561922"
+         sodipodi:end="6.283185328253023"
+         sodipodi:open="true"
+         d="m 126.46 106.343 a 44.0063 44.0063 0 0 1 3.34978 16.8405 l -44.0063 -9.27364e-07 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path118" />
+      <path
+         gcodetools="Preview"
+         style="stroke:#f88;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         d="M 129.81 123.184 L 129.81 123.184"
+         id="path119" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="76.72875718196399"
+         sodipodi:cy="62.01659000000009"
+         sodipodi:rx="18.41998581803601"
+         sodipodi:ry="18.41998581803601"
+         sodipodi:type="arc"
+         sodipodi:start="6.283185307179583"
+         sodipodi:end="7.163882161417655"
+         sodipodi:open="true"
+         d="m 95.1487 62.0166 a 18.42 18.42 0 0 1 -6.69357 14.2052 l -11.7264 -14.2052 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path120" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="69.83238199999994"
+         sodipodi:cy="53.6624443990861"
+         sodipodi:rx="29.252886600914014"
+         sodipodi:ry="29.252886600914014"
+         sodipodi:type="arc"
+         sodipodi:start="0.8806968542380726"
+         sodipodi:end="1.5707963267948952"
+         sodipodi:open="true"
+         d="m 88.4552 76.2218 a 29.2529 29.2529 0 0 1 -18.6228 6.69357 l -4.26326e-14 -29.2529 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path121" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="69.83238199999994"
+         sodipodi:cy="53.66244661035307"
+         sodipodi:rx="29.252884389646994"
+         sodipodi:ry="29.252884389646994"
+         sodipodi:type="arc"
+         sodipodi:start="1.5707963267948948"
+         sodipodi:end="2.2608958325191617"
+         sodipodi:open="true"
+         d="m 69.8324 82.9153 a 29.2529 29.2529 0 0 1 -18.6228 -6.69357 l 18.6228 -22.5593 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path122" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="62.936008177537055"
+         sodipodi:cy="62.01659000000001"
+         sodipodi:rx="18.41998617753709"
+         sodipodi:ry="18.41998617753709"
+         sodipodi:type="arc"
+         sodipodi:start="2.260895832519161"
+         sodipodi:end="3.141592653589792"
+         sodipodi:open="true"
+         d="m 51.2096 76.2218 a 18.42 18.42 0 0 1 -6.69357 -14.2052 l 18.42 -2.84217e-14 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path123" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="59.64510839653596"
+         sodipodi:cy="62.01658999999998"
+         sodipodi:rx="15.129086396535968"
+         sodipodi:ry="15.129086396535968"
+         sodipodi:type="arc"
+         sodipodi:start="3.1415926535897896"
+         sodipodi:end="4.148178497518522"
+         sodipodi:open="true"
+         d="m 44.516 62.0166 a 15.1291 15.1291 0 0 1 7.03883 -12.7842 l 8.09026 12.7842 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path124" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="70.1721990000002"
+         sodipodi:cy="78.65151732694719"
+         sodipodi:rx="34.81513332694729"
+         sodipodi:ry="34.81513332694729"
+         sodipodi:type="arc"
+         sodipodi:start="4.148178497518527"
+         sodipodi:end="4.7123889803846835"
+         sodipodi:open="true"
+         d="m 51.5548 49.2323 a 34.8151 34.8151 0 0 1 18.6174 -5.39596 l 2.27374e-13 34.8151 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path125" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="70.17219899999998"
+         sodipodi:cy="76.6797053347365"
+         sodipodi:rx="32.84332133473646"
+         sodipodi:ry="32.84332133473646"
+         sodipodi:type="arc"
+         sodipodi:start="4.71238898038469"
+         sodipodi:end="5.298344653557734"
+         sodipodi:open="true"
+         d="m 70.1722 43.8364 a 32.8433 32.8433 0 0 1 18.1622 5.47879 l -18.1622 27.3645 z"
+         style="stroke:#8f8;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path126" />
+      <path
+         gcodetools="Preview"
+         sodipodi:cx="79.90431414512692"
+         sodipodi:cy="62.016590000000036"
+         sodipodi:rx="15.244428854873064"
+         sodipodi:ry="15.244428854873064"
+         sodipodi:type="arc"
+         sodipodi:start="5.298344653557731"
+         sodipodi:end="6.283185307179586"
+         sodipodi:open="true"
+         d="m 88.3344 49.3152 a 15.2444 15.2444 0 0 1 6.81432 12.7014 l -15.2444 7.10543e-15 z"
+         style="stroke:#88f;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         id="path127" />
+      <path
+         gcodetools="Preview"
+         style="stroke:#f88;fill:none;stroke-width:1;marker-end:url(#DrawCurveMarker)"
+         d="M 95.1487 62.0166 L 95.1487 62.0166"
+         id="path128" />
+    </g>
+    <g
+       gcodetools="Preview group"
+       id="g129" />
+    <g
+       gcodetools="Preview group"
+       id="g130" />
+  </g>
+</svg>
