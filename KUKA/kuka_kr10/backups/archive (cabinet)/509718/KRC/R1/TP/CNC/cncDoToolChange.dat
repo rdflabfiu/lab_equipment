@@ -1,0 +1,10 @@
+&ACCESS  RV
+&PARAM DISKPATH = TP/CNC
+&PARAM TEMPLATE = C:\KRC\Roboter\Template\vorgabe
+&PARAM EDITMASK = *
+&REL 2
+DEFDAT  cncDoToolChange
+
+;INT cncOldTool=0
+
+ENDDAT

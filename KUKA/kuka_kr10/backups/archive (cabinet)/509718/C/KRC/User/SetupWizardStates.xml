@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ItemStateSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <GeneralStep Path="RobotSetup.EnterRobotData" EditState="Completed" WasExecuted="true" />
+  <GeneralStep Path="RobotSetup.NetworkConfiguration" EditState="Completed" WasExecuted="true" />
+  <GeneralStep Path="RobotSetup.AdjustmentGroup.Unmaster" EditState="Unhandled" WasExecuted="false" />
+  <GeneralStep Path="RobotSetup.AdjustmentGroup.EnsureT1" EditState="NotRequired" WasExecuted="false" />
+  <GeneralStep Path="RobotSetup.AdjustmentGroup.Adjust" EditState="NotRequired" WasExecuted="false" />
+  <GeneralStep Path="RobotSetup.AdjustmentGroup.LearnOffset" EditState="Unhandled" WasExecuted="false" />
+  <Checkpoint Path="RobotSetup.MeasureToolsGroup.SelectTcpMeasurementType" EditState="NotRequired" WasExecuted="false" />
+  <GeneralStep Path="RobotSetup.MeasureToolsGroup.MeasureToolNum" EditState="NotRequired" WasExecuted="false" />
+  <GeneralStep Path="RobotSetup.MeasureToolsGroup.MeasureToolXYZ4P" EditState="NotRequired" WasExecuted="false" />
+  <GeneralStep Path="RobotSetup.MeasureToolsGroup.MeasureToolXYZRef" EditState="NotRequired" WasExecuted="false" />
+  <Checkpoint Path="RobotSetup.MeasureToolsGroup.SelectToolOrientationMeasurementType" EditState="NotRequired" WasExecuted="false" />
+  <GeneralStep Path="RobotSetup.MeasureToolsGroup.MeasureToolABC2P" EditState="NotRequired" WasExecuted="false" />
+  <GeneralStep Path="RobotSetup.MeasureToolsGroup.MeasureToolABCWorld" EditState="NotRequired" WasExecuted="false" />
+  <GeneralStep Path="RobotSetup.ToolLoadDataGroup.EnterToolLoadData" EditState="Unhandled" WasExecuted="false" />
+  <GeneralStep Path="RobotSetup.ToolLoadDataGroup.EnterAdditionalLoadData" EditState="Completed" WasExecuted="true" />
+  <Checkpoint Path="RobotSetup.MeasureBasesGroup.SelectBaseMeasurementType" EditState="NotRequired" WasExecuted="false" />
+  <GeneralStep Path="RobotSetup.MeasureBasesGroup.MeasureBase3P" EditState="NotRequired" WasExecuted="false" />
+  <GeneralStep Path="RobotSetup.MeasureBasesGroup.MeasureBaseInd" EditState="NotRequired" WasExecuted="false" />
+</ItemStateSet>

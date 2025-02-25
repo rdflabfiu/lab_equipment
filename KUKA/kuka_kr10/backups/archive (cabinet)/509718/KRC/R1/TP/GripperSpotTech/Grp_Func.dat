@@ -1,0 +1,43 @@
+&ACCESS  R
+&COMMENT GripperSpotTech package
+&PARAM DISKPATH = TP/GripperSpotTech
+&PARAM KUKATPGRP_VERSION = 4.0
+&REL 1
+DEFDAT  grp_func PUBLIC
+;############################################
+;# File-Version: 1.0                        #
+;# Copyright (c) KUKA Roboter GmbH 2015     #
+;############################################
+GLOBAL CONST CHAR Grp_KxrModule[14]
+Grp_KxrModule[]="GripperTechKrl"
+
+;## Configuration ##
+BOOL Grp_bDialWithIgnore=TRUE ; Default: TRUE
+
+;## Runtime
+GLOBAL STRUC GRPg_ProcessData_T INT ActGrp,ReqState,LastGrpNo,LastStNo
+DECL GLOBAL GRPg_ProcessData_T GRPg_ProcessData={ActGrp 1,ReqState 0,LastGrpNo 0,LastStNo 0}
+;ActGrp: Currently selected gripper (STK or PlugIn)
+;ReqState: Request for a new state (STK or PlugIn) 
+;LastGrpNo,LastStNo: Last gripper and state set (through prog or STK) 
+
+;DECL CONST GLOBAL KRLMSGOPT_T Grp_NOVLSTOP_NOLOG={VL_STOP FALSE,CLEAR_P_RESET TRUE,LOG_TO_DB FALSE}
+;DECL CONST GLOBAL KRLMSGOPT_T Grp_VLSTOP_NOLOG={VL_STOP TRUE,CLEAR_P_RESET TRUE,LOG_TO_DB FALSE}
+DECL GLOBAL CONST KRLMSGOPT_T Grp_NOVLSTOP_LOG={VL_STOP FALSE,CLEAR_P_RESET TRUE,LOG_TO_DB TRUE}
+DECL GLOBAL CONST KRLMSGOPT_T Grp_VLSTOP_LOG={VL_STOP TRUE,CLEAR_P_RESET TRUE,LOG_TO_DB TRUE}
+
+
+STRUC GRP_PreState_T INT iGrpIn,iStInVal,BOOL bStInVal,BOOL bGhost
+DECL GRP_PreState_T GRP_PreState[6]
+GRP_PreState[1]={iGrpIn 1026,iStInVal 0,bStInVal FALSE,bGhost TRUE}
+GRP_PreState[2]={iGrpIn 1026,iStInVal 0,bStInVal FALSE,bGhost TRUE}
+GRP_PreState[3]={iGrpIn 1026,iStInVal 0,bStInVal FALSE,bGhost TRUE}
+GRP_PreState[4]={iGrpIn 1026,iStInVal 0,bStInVal FALSE,bGhost TRUE}
+GRP_PreState[5]={iGrpIn 1026,iStInVal 0,bStInVal FALSE,bGhost TRUE}
+GRP_PreState[6]={iGrpIn 1026,iStInVal 0,bStInVal FALSE,bGhost TRUE}
+INT GRP_iPreGrpNo=0
+INT GRP_iPreStNo=0
+BOOL GRP_bGhostIsOn=FALSE
+INT Grp_iWrongInput=0
+
+ENDDAT

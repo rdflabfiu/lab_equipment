@@ -1,8 +1,0 @@
-mc_sda_mds_file_w
-mc_clamp_position_file_w
-mc_zero_offset_file_w
-mc_tool_file_w
-cnc_error_message_r
-cnc_error_message_value_r
-mc_error_message_r
-mc_error_message_value_r

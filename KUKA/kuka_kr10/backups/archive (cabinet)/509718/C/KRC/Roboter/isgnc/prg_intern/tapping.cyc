@@ -1,0 +1,329 @@
+%tapping.cyc
+
+;Zyklus fuer Gewindebohren ohne Ausgleichsfutter
+;History                                                                                      ; @DEBUG@
+;Datum       Bemerkung                                                                        ; @DEBUG@
+;13.05.2008  Release 1.0                                                                      ; @DEBUG@
+;28.02.2011  Release 1.1 - Umsetzen der Bearbeitungsrichtung                                  ; @DEBUG@
+;29.03.2011  Release 1.2 - ERROR-ID's auf 13xxx verschoben                                    ; @DEBUG@
+;06.06.2011  Release 1.3 - Pruefung Bearbeitungstiefe ueberarbeitet                           ; @DEBUG@
+;                          Berechnung+Pruefung Gewindebohrtiefe ueberarbeitet                 ; @DEBUG@
+;14.12.2011  Release 1.4 - Verwendung @P3, @P4, @P5 wg. modaler Gueltigkeit ueberarbeitet.    ; @DEBUG@
+;10.06.2015  Release 1.5 - add label                                                          ; @DEBUG@
+;04.08.2016  Release 1.6 - new modi: chip breaking and chip removal                           ; @DEBUG@
+;05.08.2016  Release 1.7 - new modus: left-hand thread; right-hand thread (default)           ; @DEBUG@
+;
+; @LABEL@
+
+;---------------------------------------------------------------------------------------------;
+;                               D E F I N E   V A R I A B L E S                               ;
+;---------------------------------------------------------------------------------------------;
+
+#VAR
+  V.L.TAPP_DEPTH                  = 0
+  V.L.CHAMFER_DEPTH               = 0
+  V.L.CHAMFER_RADIUS              = 0
+  V.L.FEED                        = ABS[V.G.WZ_AKT.P[2]*0.06]  (Speichern des Vorschubes)
+  V.L.END_TAPP_DEPTH              = 0
+  V.L.SAFE_CLEAR                  = 0
+  V.L.ISG_INDEX                   = 0                          (Index for chip removal / breaking feed steps)
+  V.L.ISG_INTERMEDIATE_TREAD_INCR = 0                          (Incremental thread depth for calculation of intermediate points)
+#ENDVAR
+
+;---------------------------------------------------------------------------------------------;
+;                          C H E C K   P A R A M E T R I S A T I O N                          ;
+;---------------------------------------------------------------------------------------------;
+(Plausibilitaetspruefungen der Versorgungsparameter und vorbereitende Berechnungen)
+
+$IF V.G.@P[3].VALID == FALSE
+  #ERROR [ID=13100 RC=2 MID=1]                              (Error: Sicherheitsabstand nicht definiert)
+$ELSEIF @P3 == 0
+  #ERROR [ID=13100 RC=2 MID=2]                              (Error: Sicherheitsabstand nicht definiert)
+$ELSE
+   @P3 = ABS[@P3] 
+$ENDIF
+
+$IF V.G.@P[4].VALID == TRUE AND V.G.@P[5].VALID == TRUE
+  #ERROR [ID=13101 RC=0]                              (Warning: Mehrfachdefinition der Bearbeitungstiefe)
+  @P5 = 0                                             (Relative Bearbeitungstiefe wird geloescht, absolut ist prior)
+$ENDIF
+
+$IF V.G.@P[4].VALID == FALSE AND V.G.@P[5].VALID == FALSE
+  #ERROR [ID=13110 RC=2]                              (Error: Bearbeitungstiefe nicht definiert)
+$ENDIF
+
+$IF V.G.@P[4].VALID == FALSE AND V.G.@P[5].VALID == TRUE AND @P5 == 0
+  #ERROR [ID=13111 RC=2]                              (Error: Relative Bearbeitungstiefe ist Null)
+$ENDIF
+
+$IF @P6 != 0
+  $IF @P6 < 0 OR @P6 > 360
+    #ERROR [ID=13120 RC=2 PM1=2 PV1=@P6]              (Error: Unzulaessige Spindelposition definiert)
+  $ELSE
+    @P6 = ABS[@P6]
+  $ENDIF
+$ELSEIF V.G.WZ_AKT.P[4] != 0
+  @P6 = ABS[V.G.WZ_AKT.P[4]*DEXP[-4]]
+$ELSE
+  @P6 = ABS[@P6]
+$ENDIF
+
+$IF @P7 != 0
+  @P7 = ABS[@P7]
+$ELSEIF V.G.WZ_AKT.P[3] != 0
+  @P7 = ABS[V.G.WZ_AKT.P[3]/6000]
+$ELSE
+  #ERROR [ID=13121 RC=2]                              (Error: Spindeldrehzahl nicht definiert)
+$ENDIF
+
+$IF @P8 != 0
+  @P8 = ABS[@P8]
+$ELSEIF V.G.WZ_AKT.P[5] != 0
+  @P8 = ABS[V.G.WZ_AKT.P[5]*DEXP[-4]]
+$ELSE
+  #ERROR [ID=13122 RC=2]                              (Error: Gewindesteigung nicht definiert)
+$ENDIF
+
+
+(Berechnung der Gewindebohrtiefe fuer internen Gebrauch)
+$IF V.G.@P[4].VALID == TRUE
+  V.L.TAPP_DEPTH = ABS[@P2 - @P4]
+$ELSE
+  V.L.TAPP_DEPTH = ABS[@P5]
+$ENDIF
+
+
+$IF V.G.WZ_AKT.P[0] != 0
+  $IF V.L.TAPP_DEPTH > [V.G.WZ_AKT.P[0]*DEXP[-4]] 
+    #ERROR [ID=13102 RC=2]                            (Error: Programmierte Bearbeitungstiefe ueberschreitet zulaessige Werkzeuglaenge)
+  $ENDIF
+$ENDIF
+
+(Umsetzen der Bearbeitungsrichtung von alter auf neue Programmierung)
+$IF @P9 == 20 OR @P9 == 30 OR @P9 == 50
+  @P9 = -1;
+$ENDIF
+
+$IF @P9 == 10 OR @P9 == 40 OR @P9 == 60
+  @P9 = 1;
+$ENDIF
+
+$IF V.G.@P[10].VALID == FALSE
+  @P10 = 1
+$ELSEIF @P10 != -1 AND @P10 != 1
+  #ERROR[ID13124 RC2 PM1=2 PV1=@P10]
+$ENDIF
+
+$IF V.G.@P[11].VALID == FALSE
+  @P11 = 1
+$ELSEIF INT[ABS[@P11]] != @P11 OR @P11 == 0
+  #ERROR[ID13125 RC2 PM1=2 PV1=@P11]
+$ENDIF
+  
+$IF V.G.@P[12].VALID == FALSE
+  @P12 = 0
+$ELSE
+  @P12 = @P9*ABS[@P12]
+$ENDIF
+
+$IF V.G.@P[13].VALID == FALSE
+  @P13 = 0
+$ELSEIF @P13 != 0 AND @P13 != 1 AND @P13 != 2
+  #ERROR[ID13126 RC2 PM1=2 PV1=@P13]                  (Error: Unknown modus)
+$ENDIF
+
+(Bestimmung der Sicherheitsebene und der Bearbeitungstiefe, Richtungsabhaengig)
+$SWITCH @P9                                           (Richtung)
+  $CASE -1
+    $IF @P1 <= @P2                                    (Rueckzugsebene liegt unterhalb Bezugsebene oder sind gleich)
+      #ERROR [ID=13106 RC=2]                          (Error: Falsche Definition von Bezugs- und Rueckzugsebene)
+    $ENDIF
+
+    V.L.SAFE_CLEAR = @P2+@P3                          (Sicherheitsebene=Bezugsebene+Sicherheitsabstand)
+
+    $IF V.L.SAFE_CLEAR >= @P1                         (Resultierende Sicherheitsebene liegt oberhalb Rueckzugsebene oder gleich)
+      #ERROR [ID=13107 RC=2]                          (Error: Falsche Definition des Sicherheitsabstandes)
+    $ENDIF
+
+    $IF @P5 != 0
+      V.L.END_TAPP_DEPTH = @P2-ABS[@P5]               (Gewindeendbohrtiefe intern immer absolut)
+      $IF @P11 != 0
+        V.L.ISG_INTERMEDIATE_TREAD_INCR = -ABS[@P5]/@P11
+      $ENDIF
+    $ELSE
+      V.L.END_TAPP_DEPTH = @P4
+      $IF @P11 != 0
+        V.L.ISG_INTERMEDIATE_TREAD_INCR = [@P4-@P2]/@P11
+      $ENDIF
+    $ENDIF
+
+    $IF V.L.END_TAPP_DEPTH >= V.L.SAFE_CLEAR
+      #ERROR[ID13113 RC2]
+    $ENDIF
+
+    $IF V.G.WZ_AKT.P[6] == 1
+      V.L.CHAMFER_DEPTH = @P2-[0.5*@P8]               (Faustformel: Senkungstiefe(absolut)=Bezugsebene-Halbe Steigung)
+      $IF V.G.WZ_AKT.P[7] != 0 
+        V.L.CHAMFER_RADIUS = V.G.WZ_AKT.P[7]*0.625    (Faustformel: Senkungsradius=0.5*Gewindegroesse*1.25)
+      $ELSE
+        #ERROR [ID=13123 RC=2]                        (Error: Gewindegroesse nicht definiert)
+      $ENDIF
+    $ENDIF 
+  $BREAK
+
+  $CASE 1
+    $IF @P1 >= @P2                                    (Rueckzugsebene liegt oberhalb Bezugsebene oder sind gleich)
+      #ERROR [ID=13106 RC=2]                          (Error: Falsche Definition von Bezugs- und Rueckzugsebene)
+    $ENDIF
+
+    V.L.SAFE_CLEAR = @P2-@P3                          (Sicherheitsebene=Bezugsebene-Sicherheitsabstand)
+
+    $IF V.L.SAFE_CLEAR <= @P1                         (Resultierende Sicherheitsebene liegt unterhalb Rueckzugsebene oder gleich)
+      #ERROR [ID=13107 RC=2]                          (Error: Falsche Definition des Sicherheitsabstandes) 
+    $ENDIF
+
+    $IF @P5 != 0
+      V.L.END_TAPP_DEPTH = @P2+ABS[@P5]               (Gewindeendbohrtiefe intern immer absolut)
+      $IF @P11 != 0
+        V.L.ISG_INTERMEDIATE_TREAD_INCR = +ABS[@P5]/@P11
+      $ENDIF
+    $ELSE
+      V.L.END_TAPP_DEPTH = @P4
+      $IF @P11 != 0
+        V.L.ISG_INTERMEDIATE_TREAD_INCR = [@P4-@P2]/@P11
+      $ENDIF
+    $ENDIF
+
+    $IF V.L.END_TAPP_DEPTH <= V.L.SAFE_CLEAR
+      #ERROR[ID13113 RC2]
+    $ENDIF
+
+    $IF V.G.WZ_AKT.P[6] == 1
+      V.L.CHAMFER_DEPTH = @P2+[0.5*@P8]               (Faustformel: Senkungstiefe(absolut)=Bezugsebene+Halbe Steigung)
+      $IF V.G.WZ_AKT.P[7] != 0 
+        V.L.CHAMFER_RADIUS = V.G.WZ_AKT.P[7]*0.625    (Faustformel: Senkungsradius=0.5*Gewindegroesse*1.25)
+      $ELSE
+        #ERROR [ID=13123 RC=2]                        (Error: Gewindegroesse nicht definiert)
+      $ENDIF
+    $ENDIF
+  $BREAK
+
+  $DEFAULT
+    #ERROR [ID=13108 RC=2]                            (Error: Keine oder unbekannte Bearbeitungsrichtung definiert)
+$ENDSWITCH
+
+;---------------------------------------------------------------------------------------------;
+;                       S T A R T   T A P P I N G   ( D I R E C T L Y )                       ;
+;---------------------------------------------------------------------------------------------;
+(Sofort Gewindebohren)
+$IF V.G.WZ_AKT.P[6] == 0                              (Einfacher Gewindebohrer)
+  G90 G00 @ZV.L.SAFE_CLEAR                            (Fahre im Eilgang auf Sicherheitsabstand)
+  $IF @P10 == 1
+    M03 @S@P7 M19 @S.POS=@P6                          (Spindel positionieren)
+  $ELSEIF @P10 == -1
+    M04 @S@P7 M19 @S.POS=@P6                          (Spindel positionieren)
+  $ENDIF
+
+  $IF @P13 == 0
+
+    G63 G90 @ZV.L.END_TAPP_DEPTH @S[@P7*@P10] F[@P7*@P8]     (Gewindeschneiden auf Endbohrtiefe, Vorschub=Drehzahl*Steigung)
+    G63 G90 @ZV.L.SAFE_CLEAR @S-[@P7*@P10]                   (Aus Gewinde herausfahren)
+
+  $ELSEIF @P13 == 1
+
+  $IF @P11 > 1
+      G63 G90 @Z@P2 @S[@P7*@P10] F[@P7*@P8]
+      $FOR V.L.ISG_INDEX = 1, @P11, 1
+        G63 G91 @Z[V.L.ISG_INTERMEDIATE_TREAD_INCR] @S[@P7*@P10] F[@P7*@P8]
+        $IF V.L.END_TAPP_DEPTH != V.A.ACT_POS.@Z
+          G63 G91 @Z-@P12 @S-[@P7*@P10] F[@P7*@P8]
+          G63 G91 @Z@P12 @S[@P7*@P10] F[@P7*@P8]
+        $ENDIF
+      $ENDFOR
+    $ELSE
+      G63 G90 @ZV.L.END_TAPP_DEPTH @S[@P7*@P10] F[@P7*@P8]   (Gewindeschneiden auf Endbohrtiefe, Vorschub=Drehzahl*Steigung)
+    $ENDIF
+    G63 G90 @ZV.L.SAFE_CLEAR @S-[@P7*@P10]                   (Aus Gewinde herausfahren)
+
+  $ELSEIF @P13 == 2
+
+  $IF @P11 > 1
+      $FOR V.L.ISG_INDEX = 1, @P11, 1
+        G63 G90 @Z@P2 @S[@P7*@P10] F[@P7*@P8]
+        G63 G91 @Z[V.L.ISG_INTERMEDIATE_TREAD_INCR*V.L.ISG_INDEX] @S[@P7*@P10] F[@P7*@P8]
+        G63 G90 @ZV.L.SAFE_CLEAR @S-[@P7*@P10]               (Aus Gewinde herausfahren)
+      $ENDFOR
+    $ELSE
+      G63 G90 @ZV.L.END_TAPP_DEPTH @S[@P7*@P10] F[@P7*@P8]   (Gewindeschneiden auf Endbohrtiefe, Vorschub=Drehzahl*Steigung)
+    $ENDIF
+    G63 G90 @ZV.L.SAFE_CLEAR @S-[@P7*@P10]                   (Aus Gewinde herausfahren)
+
+  $ENDIF
+
+  G90 G00 @Z@P1                                       (Fahre im Eilgang auf Rueckzugsebene)
+$ENDIF
+
+;---------------------------------------------------------------------------------------------;
+;                  S T A R T   T A P P I N G   ( F I R S T   S I N K I N G )                  ;
+;---------------------------------------------------------------------------------------------;
+(Erst Senken, dann Gewindebohren)
+$IF V.G.WZ_AKT.P[6] == 1                              (Kombiwerkzeug: Gewindebohrer mit Senker)
+  $IF @P10 == 1
+    M03 @S[@P7*4] FV.L.FEED                           (Faustformel: Senken mit vierfacher Gewindebohrdrehzahl und Bearbeitungsvorschub aus Werkzeugdaten)
+  $ELSEIF @P10 == -1
+    M04 @S[@P7*4] FV.L.FEED                           (Faustformel: Senken mit vierfacher Gewindebohrdrehzahl und Bearbeitungsvorschub aus Werkzeugdaten)
+  $ENDIF
+  G90 G00 @ZV.L.SAFE_CLEAR                            (Fahre im Eilgang auf Sicherheitsabstand)
+  G90 G01 @ZV.L.CHAMFER_DEPTH                         (Kombiwerkzeug auf Senktiefe fahren)
+  G91 G01 @X-[V.L.CHAMFER_RADIUS - V.G.WZ_AKT.R]      (Senkfraeser in erster Hauptachse an Lochrand fahren)
+  G03 @I[V.L.CHAMFER_RADIUS - V.G.WZ_AKT.R]           (Senkung als Vollkreis fahren)
+  G91 G00 @X[V.L.CHAMFER_RADIUS - V.G.WZ_AKT.R]       (Kombiwerkzeug wieder in Bohrungsmitte fahren)
+
+  (Gewindebohren)
+  G90 G00 @ZV.L.SAFE_CLEAR                            (Fahre im Eilgang auf Sicherheitsabstand)
+  $IF @P10 == 1
+    M03 @S@P7 M19 @S.POS=@P6                          (Spindel positionieren)
+  $ELSEIF @P10 == -1
+    M04 @S@P7 M19 @S.POS=@P6                          (Spindel positionieren)
+  $ENDIF
+
+  $IF @P13 == 0
+
+    G63 G90 @ZV.L.END_TAPP_DEPTH @S[@P7*@P10] F[@P7*@P8]     (Gewindeschneiden auf Endbohrtiefe, Vorschub=Drehzahl*Steigung)
+    G63 G90 @ZV.L.SAFE_CLEAR @S-[@P7*@P10]                   (Aus Gewinde herausfahren)
+
+  $ELSEIF @P13 == 1
+
+  $IF @P11 > 1
+      G63 G90 @Z@P2 @S[@P7*@P10] F[@P7*@P8]
+      $FOR V.L.ISG_INDEX = 1, @P11, 1
+        G63 G91 @Z[V.L.ISG_INTERMEDIATE_TREAD_INCR] @S[@P7*@P10] F[@P7*@P8]
+        $IF V.L.END_TAPP_DEPTH != V.A.ACT_POS.@Z
+          G63 G91 @Z-@P12 @S-[@P7*@P10] F[@P7*@P8]
+          G63 G91 @Z@P12 @S[@P7*@P10] F[@P7*@P8]
+        $ENDIF
+      $ENDFOR
+    $ELSE
+      G63 G90 @ZV.L.END_TAPP_DEPTH @S[@P7*@P10] F[@P7*@P8]   (Gewindeschneiden auf Endbohrtiefe, Vorschub=Drehzahl*Steigung)
+    $ENDIF
+    G63 G90 @ZV.L.SAFE_CLEAR @S-[@P7*@P10]                   (Aus Gewinde herausfahren)
+
+  $ELSEIF @P13 == 2
+
+  $IF @P11 > 1
+      $FOR V.L.ISG_INDEX = 1, @P11, 1
+        G63 G90 @Z@P2 @S[@P7*@P10] F[@P7*@P8]
+        G63 G91 @Z[V.L.ISG_INTERMEDIATE_TREAD_INCR*V.L.ISG_INDEX] @S[@P7*@P10] F[@P7*@P8]
+        G63 G90 @ZV.L.SAFE_CLEAR @S-[@P7*@P10]               (Aus Gewinde herausfahren)
+      $ENDFOR
+    $ELSE
+      G63 G90 @ZV.L.END_TAPP_DEPTH @S[@P7*@P10] F[@P7*@P8]   (Gewindeschneiden auf Endbohrtiefe, Vorschub=Drehzahl*Steigung)
+    $ENDIF
+    G63 G90 @ZV.L.SAFE_CLEAR @S-[@P7*@P10]                   (Aus Gewinde herausfahren)
+
+  $ENDIF
+
+  G90 G00 @Z@P1                                       (Fahre im Eilgang auf Rueckzugsebene)
+$ENDIF
+
+M17

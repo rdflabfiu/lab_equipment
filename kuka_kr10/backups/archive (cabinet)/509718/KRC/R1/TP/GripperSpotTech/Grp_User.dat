@@ -1,9 +1,0 @@
-&ACCESS  R
-&COMMENT GripperSpotTech package
-&PARAM DISKPATH = TP/GripperSpotTech
-&PARAM KUKATPGRP_VERSION = 4.0
-&REL 1
-DEFDAT  Grp_User PUBLIC
-;Insert your modifications here
-
-ENDDAT

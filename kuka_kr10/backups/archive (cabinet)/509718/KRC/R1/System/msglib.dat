@@ -1,8 +1,0 @@
-&ACCESS  R
-&COMMENT Message library
-&PARAM DISKPATH = System
-DEFDAT  MsgLib PUBLIC
-
-DECL INT lnHandle=0
-
-ENDDAT

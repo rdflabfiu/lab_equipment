@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- ************************************************************* -->
+<!-- Configuration list for KUKA.CNC V2.1                          -->
+<!-- 6 CNC axis + 1 spindle axis                  Date: 19.03.2013 -->
+<!-- ************************************************************* -->
+<StartUp>
+  <Version Label="1">
+    <Schema Version="1" />
+  </Version>
+  <!-- General parameter -->
+  <!-- ================= -->
+  <GeneralParameter>
+    <!-- Number of configured channels - 'kanal_anzahl' -->
+    <P-STUP-00001 Value="1" />
+    <!-- Selected topology - 'konfiguration' -->
+    <P-STUP-00007 Value="EIN_KANAL_KONFIGURIERUNG" />
+    <!-- GUI mode - 'gui_mode' -->
+    <gui_mode Value="0" />
+    <!-- PLC mode - 'plc_mode' -->
+    <P-STUP-00032 Value="0" />
+    <!-- Path to error message files - 'error_message_texts' -->
+    <error_message_texts Value="isgnc\error\err_text.txt" />
+    <ChannelIndex Value="0">
+      <!-- Memory size for reversing - 'fb_storage_size' -->
+      <P-STUP-00033 Value="0x200000" />
+    </ChannelIndex>
+    <CamTableParameter>
+      <!-- Name of parameter file containing cam table files - 'cam_table_loader' -->
+      <cam_table_loader Value="isgnc\listen\tab_ldr.lis" />
+      <!-- Maximum memory size for cam tables in bytes - 'cam_table_storage' -->
+      <cam_table_storage_size Value="500000" />
+    </CamTableParameter>
+    <SercosParameter>
+      <!-- SERCOS start-up - #1 with SERCOS, #2 without SERCOS - 'sercos_hochlauf' -->
+      <P-STUP-00002 Value="2" />
+      <!-- Number of sercos rings - 'sercos_ring_anzahl' -->
+      <P-STUP-00003 Value="1" />
+      <!-- SERCOS baud rate - 'serc_baudrate', 'sercos_lwl_baudrate' -->
+      <P-STUP-00004 Value="2MBAUD" />
+      <!-- SERCOS time slot calculation - #0=use internal macro, #1=use machine data lists - 'mds_time_slots' -->
+      <P-STUP-00005 Value="0" />
+      <!-- SERCOS-AT time slot calculation - 'at_tslot_type' -->
+      <P-STUP-00006 Value="STANDARD" />
+    </SercosParameter>
+  </GeneralParameter>
+  <!-- Configuration files -->
+  <!-- =================== -->
+  <ConfigurationFiles>
+    <GeneralParameter>
+      <!-- List type - 'listen' -->
+      <P-STUP-00008 Value="ASCII" />
+      <!-- Path of configuration files - 'konf_path' -->
+      <konf_path Value="Config\User\Common\ISGNC" />
+      <!-- Name of the parameter file for real time settings - 'rtconf_lis' -->
+      <rtconf_lis Value="Config\System\Common\ISGNC\rt_conf.xml" />
+      <!-- Name of the parameter file for hardware configuration - 'hw_configuration_list' -->
+      <hw_configuration_list Value="Config\System\Common\ISGNC\hw_conf.xml" />
+    </GeneralParameter>
+    <ChannelParameter>
+      <!-- Name of the parameter file for the default channel parameters - 'default_sda_mds' -->
+      <P-STUP-00034 Value="Config\User\Common\ISGNC\default_sda_mds.xml" />
+      <!-- Name of the parameter file for the manual operation parameters - 'hand_mds' -->
+      <P-STUP-00013 Value="Config\User\Common\ISGNC\manual_mode.xml" />
+      <ChannelIndex Value="0">
+        <!-- Name of the parameter file for the channel parameters - 'sda_mds' -->
+        <P-STUP-00009 Value="Config\User\Common\ISGNC\sda_mds_1.xml" />
+        <!-- Name of the parameter file for the tool data  - 'werkz_data' -->
+        <P-STUP-00010 Value="Config\User\Common\ISGNC\tool_data_1.xml" />
+        <!-- Name of the parameter file for the zero point data - 'nullp_data' -->
+        <P-STUP-00011 Value="Config\User\Common\ISGNC\zero_offset_1.xml" />
+        <!-- Name of the parameter file for the clamp position offset data - 'pzv_data' -->
+        <P-STUP-00012 Value="Config\User\Common\ISGNC\clamp_pos_offset_1.xml" />
+        <!-- Name of the parameter file for the external variables - 've_var', 'ext_var' -->
+        <P-STUP-00038 Value="Config\System\Common\ISGNC\ext_var_1.xml" />
+        <!-- HMI objects -->
+        <HMI>
+          <!-- Name of the parameter file - 'objects' -->
+          <P-STUP-00024 Value="default" />
+        </HMI>
+        <!-- Parameters for the BF channel  -->
+        <Channel>
+          <!-- Name of the parameter file - 'objects' -->
+          <P-STUP-00026 Value="default" />
+        </Channel>
+      </ChannelIndex>
+    </ChannelParameter>
+    <AxisParameter>
+      <!-- Name of the parameter file for the default axis parameters - 'default_achs_mds' -->
+      <P-STUP-00035 Value="Config\User\Common\ISGNC\default_ax_mds.xml" />
+      <!-- Number of axis machine data records - 'zahl_mds' -->
+      <P-STUP-00014 Value="13" />
+      <AxisIndex Value="0">
+        <!-- Name of the parameter file for the axis parameters - 'achs_mds' -->
+        <P-STUP-00015 Value="Config\User\Common\ISGNC\ax_mds_1.xml" />
+      </AxisIndex>
+      <AxisIndex Value="1">
+        <!-- Name of the parameter file for the axis parameters - 'achs_mds' -->
+        <P-STUP-00015 Value="Config\User\Common\ISGNC\ax_mds_2.xml" />
+      </AxisIndex>
+      <AxisIndex Value="2">
+        <!-- Name of the parameter file for the axis parameters - 'achs_mds' -->
+        <P-STUP-00015 Value="Config\User\Common\ISGNC\ax_mds_3.xml" />
+      </AxisIndex>
+      <AxisIndex Value="3">
+        <!-- Name of the parameter file for the axis parameters - 'achs_mds' -->
+        <P-STUP-00015 Value="Config\User\Common\ISGNC\ax_mds_4.xml" />
+      </AxisIndex>
+      <AxisIndex Value="4">
+        <!-- Name of the parameter file for the axis parameters - 'achs_mds' -->
+        <P-STUP-00015 Value="Config\User\Common\ISGNC\ax_mds_5.xml" />
+      </AxisIndex>
+      <AxisIndex Value="5">
+        <!-- Name of the parameter file for the axis parameters - 'achs_mds' -->
+        <P-STUP-00015 Value="Config\User\Common\ISGNC\ax_mds_6.xml" />
+      </AxisIndex>
+      <AxisIndex Value="6">
+        <!-- Name of the parameter file for the axis parameters - 'achs_mds' -->
+        <P-STUP-00015 Value="Config\User\Common\ISGNC\ax_mds_7.xml" />
+      </AxisIndex>
+      <AxisIndex Value="7">
+        <!-- Name of the parameter file for the axis parameters - 'achs_mds' -->
+        <P-STUP-00015 Value="Config\User\Common\ISGNC\ax_mds_8.xml" />
+      </AxisIndex>
+      <AxisIndex Value="8">
+        <!-- Name of the parameter file for the axis parameters - 'achs_mds' -->
+        <P-STUP-00015 Value="Config\User\Common\ISGNC\ax_mds_9.xml" />
+      </AxisIndex>
+      <AxisIndex Value="9">
+        <!-- Name of the parameter file for the axis parameters - 'achs_mds' -->
+        <P-STUP-00015 Value="Config\User\Common\ISGNC\ax_mds_10.xml" />
+      </AxisIndex>
+      <AxisIndex Value="10">
+        <!-- Name of the parameter file for the axis parameters - 'achs_mds' -->
+        <P-STUP-00015 Value="Config\User\Common\ISGNC\ax_mds_11.xml" />
+      </AxisIndex>
+      <AxisIndex Value="11">
+        <!-- Name of the parameter file for the axis parameters - 'achs_mds' -->
+        <P-STUP-00015 Value="Config\User\Common\ISGNC\ax_mds_12.xml" />
+      </AxisIndex>
+      <AxisIndex Value="12">
+        <!-- Name of the parameter file for the axis parameters - 'achs_mds' -->
+        <P-STUP-00015 Value="Config\User\Common\ISGNC\ax_mds_32.xml" />
+      </AxisIndex>
+    </AxisParameter>
+  </ConfigurationFiles>
+  <!-- NC program settings -->
+  <!-- =================== -->
+  <NCSettings>
+    <!-- NC program paths -->
+    <!-- ================ -->
+    <Path>
+      <ChannelIndex Value="0">
+        <NCProgramPathIndex Value="0">
+          <!-- Path specification - 'prg' -->
+          <P-STUP-00018 Value="CIFSDev\Roboter\isgnc\prg" />
+          <!-- Logic path number - 'log_nr' -->
+          <P-STUP-00019 Value="1" />
+          <!-- Path type - 'typ' -->
+          <P-STUP-00020 Value="0x07" />
+          <!-- Priority of program path - 'prioritaet' -->
+          <P-STUP-00021 Value="2" />
+        </NCProgramPathIndex>
+        <NCProgramPathIndex Value="1">
+          <!-- Path specification - 'prg' -->
+          <P-STUP-00018 Value="CIFSDev\Roboter\isgnc\prg_intern" />
+          <!-- Logic path number - 'log_nr' -->
+          <P-STUP-00019 Value="2" />
+          <!-- Path type - 'typ' -->
+          <P-STUP-00020 Value="0x03" />
+          <!-- Priority of program path - 'prioritaet' -->
+          <P-STUP-00021 Value="1" />
+        </NCProgramPathIndex>
+        <NCProgramPathIndex Value="2">
+          <!-- Path specification - 'prg' -->
+          <P-STUP-00018 Value="CIFSDev\Roboter\isgnc\prg_sync" />
+          <!-- Logic path number - 'log_nr' -->
+          <P-STUP-00019 Value="3" />
+          <!-- Path type - 'typ' -->
+          <P-STUP-00020 Value="0x03" />
+          <!-- Priority of program path - 'prioritaet' -->
+          <P-STUP-00021 Value="3" />
+        </NCProgramPathIndex>
+      </ChannelIndex>
+    </Path>
+  </NCSettings>
+  <ErrorManagement>
+    <!-- Table with error message text - 'error_text_of_id' -->
+    <ErrorTextOfID Value="C:\KRC\ROBOTER\Isgnc\error\err_text.txt" />
+    <!-- Protcol mode - 'error_protocol_mode' -->
+    <ErrorProtocolMode Value="0x0018" />
+    <!-- Log file name - 'error_log_file_name' -->
+    <ErrorLogFileName Value="CNCErrorMsg.log" />
+    <!-- Max. size of log file - 'error_log_file_max_size' -->
+    <ErrorLogFileMaxSize Value="100000" />
+    <!-- Wait cycles of PLC - 'error_plc_wait_cycles' -->
+    <ErrorPlcWaitCycles Value="5" />
+    <ErrorFilter>
+      <ErrorFilterIndex Value="0">
+        <!-- Error number - 'reason' -->
+        <ErrorReason Value="0" />
+        <!-- Action - 'action' -->
+        <ErrorAction Value="NONE" />
+        <!-- Conditional activation - 'conditional_activation' -->
+        <ConditionalActivation Value="0x1" />
+        <!-- Conditional action - 'conditional_action' -->
+        <ConditionalAction Value="HIDE_LOG" />
+        <!-- Conditional parameter - 'conditional_param' -->
+        <ConditionalParam Value="123" />
+        <!-- Conditional output - 'conditional_output' -->
+        <ConditionalOutput Value="filtered" />
+      </ErrorFilterIndex>
+    </ErrorFilter>
+  </ErrorManagement>
+</StartUp>

@@ -1,0 +1,6 @@
+&ACCESS RVP
+&REL 1
+&COMMENT Mastering Reference User Program
+&PARAM DISKPATH = Program
+DEF MasRef_USER()
+END 

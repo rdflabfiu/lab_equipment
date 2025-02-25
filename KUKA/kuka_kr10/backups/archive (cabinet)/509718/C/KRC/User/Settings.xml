@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <setting path="BackupManager\Network\KopFileDirectory">D:\ProjectBackup</setting>
+  <setting path="BackupManager\Network\ArchiveHistoryCount">5</setting>
+  <setting path="BackupManager\Network\ArchiveDirectory">D:\ProjectBackup</setting>
+  <setting path="BackupManager\Network\ArchivePath">D:\ProjectBackup\0\WorkingProject.asz</setting>
+</settings>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ISGNCAxes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Version Label="">
+        <Info Version="KRCV8.3"/>
+        <Schema Version="1"/>
+    </Version>
+    <Interfaces>
+        <EmiInterface isActive="true" /> 
+    </Interfaces>
+    <Axes>
+    </Axes>
+    <MeasureChannels>
+        <MeasureChannel ID="1"/>
+        <MeasureChannel ID="2"/>
+        <MeasureChannel ID="3"/>
+        <MeasureChannel ID="4"/>
+        <MeasureChannel ID="5"/>
+    </MeasureChannels>
+</ISGNCAxes>

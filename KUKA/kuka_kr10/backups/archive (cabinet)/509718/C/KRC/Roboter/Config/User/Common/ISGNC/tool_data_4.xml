@@ -1,0 +1,748 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- *********************** -->
+<!-- Tool data               -->
+<!-- unit: 0.1um             -->
+<!-- *********************** -->
+<ToolData>
+  <Version Label="1">
+    <Schema Version="1" />
+  </Version>
+  <Tool>
+    <ToolIndex Value="1">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="2">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="3">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="4">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="5">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="6">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="7">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="8">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="9">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="10">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="11">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="12">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="13">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="14">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="15">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+    <ToolIndex Value="16">
+      <!-- Validity flag - gueltig -->
+      <P-TOOL-00005 Value="1" />
+      <!-- Unit of length, radius and axes offsets - mass_einheit -->
+      <P-TOOL-00008 Value="0" />
+      <!-- Tool length - laenge -->
+      <P-TOOL-00003 Value="0" />
+      <!-- Tool radius - radius -->
+      <P-TOOL-00004 Value="0" />
+      <AxOffsetIndex Value="0">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="1">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <AxOffsetIndex Value="2">
+        <!-- Axis offset - ax_versatz -->
+        <P-TOOL-00006 Value="0" />
+      </AxOffsetIndex>
+      <ParameterIndex Value="0">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="1">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="2">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="3">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="4">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+      <ParameterIndex Value="5">
+        <!-- Additional tool parameter - param -->
+        <P-TOOL-00007 Value="0" />
+      </ParameterIndex>
+    </ToolIndex>
+  </Tool>
+</ToolData>

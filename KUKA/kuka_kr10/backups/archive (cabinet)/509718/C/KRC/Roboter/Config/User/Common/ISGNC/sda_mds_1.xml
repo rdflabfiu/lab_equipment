@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="us-ascii"?>
+
+
+
+<SDA_MDS>
+
+   <Version Label="1">
+      <Schema Version="1" />
+   </Version>
+
+   <GeneralParameter>
+	  <!-- Sub program call at program start - 'start_init_prog_file' -->
+	  <P-CHAN-00119 Value="isg_ch1_sub_prog_start.nc" />
+      <!-- Sub program call with M6 - 'm6_prog_file' -->
+	  <P-CHAN-00118 Value="isg_ch1_sub_tool_change.nc" />
+      <!-- Sub program call with M30 - 'final_prog_file' -->
+	  <P-CHAN-00252 Value="isg_ch1_sub_prog_end.nc" />
+
+   <!-- Definition of M functions and synchronization types (default NO_SYNCH  0x0) -->
+   <!-- =========================================================================== -->
+      
+	  <!-- Tool change -->
+	  <MFktIndex Value="6">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch'-->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+      <MFktIndex Value="7">   
+         <!-- Synchronisation type of M-functions - MVS_SVS - 'm_synch'-->
+	     <P-CHAN-00041 Value="0x00000002" />
+      </MFktIndex>
+   
+      <!-- Cooling -->
+	  <MFktIndex Value="8">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch'-->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+      <MFktIndex Value="9">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch'-->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  
+      <!-- Exhausting -->
+	  <MFktIndex Value="10">   
+         <!-- Synchronisation type of M-functions - MOS -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+      <MFktIndex Value="11">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch'-->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+   
+      <!-- Program end -->
+	  <MFktIndex Value="2">   
+         <!-- Synchronisation type of M-functions - MOS -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+      <MFktIndex Value="17">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+      <MFktIndex Value="29">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+      <MFktIndex Value="30">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+
+      <!-- User specific M functions -->
+	  <MFktIndex Value="100">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="101">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="102">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="103">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="104">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="105">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="106">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="107">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="108">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="109">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="110">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="111">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="112">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="113">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="114">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="115">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="116">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="117">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="118">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="119">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="120">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="121">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="122">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="123">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="124">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="125">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="126">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="127">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="128">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="129">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="130">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+	  <MFktIndex Value="131">   
+         <!-- Synchronisation type of M-functions - MOS - 'm_synch' -->
+	     <P-CHAN-00041 Value="0x00000001" />
+      </MFktIndex>
+
+      <!-- Check of jerk on polynomial path - 'check_jerk_on_poly_path' -->
+	  <P-CHAN-00110 Value="1" />
+
+      <!-- Number of spindles - 'spdl_anzahl' -->
+	  <P-CHAN-00082 Value="0" />
+      <!-- Main spindle axis number - 'main_spindle_ax_nr'-->
+	  <P-CHAN-00051 Value="32" />
+      <!-- Designation of Main Spindle - 'main_spindle_name'-->
+	  <P-CHAN-00053 Value="S" />
+
+      <!-- Number of axis groups - 'grp_anzahl' -->
+	  <P-CHAN-00023 Value="1" />
+
+      <!-- Mode of orientation angle - 'ori_rotation_angle' -->
+	  <P-CHAN-00112 Value="2" />
+
+      <!-- Selection of kinematic type - KUKA EMI Transformation - 'kinematik_id' -->
+	  <P-CHAN-00032 Value="71" />
+
+      <!-- 'opt_contour_mode' -->
+      <P-CHAN-00259 Value="0" />
+
+      <!-- 'enable_mod_axis_always_shortest_way' -->
+      <P-CHAN-00346 Value="1" />
+	  
+   </GeneralParameter>
+   
+   <!-- HSC default settings -->
+   <HSC>
+      <!-- HSC general initialization -->
+	  <General>
+	     <!-- Segmentation of linear blocks (hsc.gen.linear_segmentation) - default value: 1 - 'linear_segmentation' -->
+		 <P-CHAN-00132 Value="1" />
+	     <!-- Segmentation specification (linear_continuous_split) - default value: 0 - 'linear_continuous_split'  -->
+		 <P-CHAN-00134 Value="1" />
+	     <!-- Segment length in the case of linear blocks (linear_split_length) - default value: 1000 [0.1um] - 'linear_split_length'  -->
+		 <P-CHAN-00135 Value="100000" />
+	     <!-- Basis of segmentation of circular blocks (circular_secant_error) - default value: 0 - 'circular_secant_error'  -->
+		 <P-CHAN-00136 Value="1" />
+	     <!-- Segmentation of circular blocks (circular_segmentation) - default value: 0 - 'circular_segmentation' -->
+		 <P-CHAN-00137 Value="1" />
+	     <!-- Contour error in the case of segmentation of circular blocks (circular_param) - default value: 50 [0.1um] - 'circular_param' -->
+		 <P-CHAN-00138 Value="5000" />
+         <!-- 'auto_contour_mode' -->
+         <P-CHAN-00239 Value="0" />
+      </General>   
+   </HSC>
+
+   <!-- Dynamic settings of manual operation in cartesian coordinate system -->
+   <ManMode>
+	  <VectorLimit>
+         <!-- Limit value for maximum velocity position - EN775: <250mm/s in T1 mode -->
+	     <v_max_pos Value="250000" />
+         <!-- Limit value for maximum acceleration position - > man_mode.vector_limit.a_max_ori -->
+	     <a_max_pos Value="1000" />
+         <!-- Limit value for ramp time position - see default_achs_mds.xml -> handbetrieb.hb.tr -->
+	     <tr_pos Value="100000" />
+         <!-- Limit value for maximum velocity orientation - see isg_manual.nc -> V.L.V_TIP_CART_DEG -->
+	     <v_max_ori Value="6000" />
+         <!-- Limit value for maximum acceleration orientation - see default_achs_mds.xml -> handbetrieb.hb.a_max -->
+	     <a_max_ori Value="373" />
+         <!-- Limit value for ramp time orientation - see default_achs_mds.lis -> handbetrieb.hb.tr -->
+	     <tr_ori Value="100000" />
+      </VectorLimit>
+   </ManMode>
+   
+   <!-- Spindle data -->
+   <Spindle>
+      
+   </Spindle>
+   
+   <!-- Group Data -->
+   <Group>
+      <GroupIndex Value="0">
+         <!-- Group data - group name - 'bezeichnung' -->
+         <P-CHAN-00005 Value="IPO_1" />
+         <!-- Group data - number of axes - 'achs_anzahl' -->
+         <P-CHAN-00003 Value="5" />
+         <AxisIndex Value="0">
+            <!-- Logical axis number - 'log_achs_nr' -->
+            <P-CHAN-00035 Value="1" />
+            <!-- Name of axis - 'bezeichnung' -->
+            <P-CHAN-00006 Value="X" />
+		 </AxisIndex>
+         <AxisIndex Value="1">
+            <!-- Logical axis number - 'log_achs_nr' -->
+            <P-CHAN-00035 Value="2" />
+            <!-- Name of axis - 'bezeichnung' -->
+            <P-CHAN-00006 Value="Y" />
+		 </AxisIndex>
+         
+         <AxisIndex Value="3">
+            <!-- Logical axis number - 'log_achs_nr' -->
+            <P-CHAN-00035 Value="4" />
+            <!-- Name of axis - 'bezeichnung' -->
+            <P-CHAN-00006 Value="A" />
+		 </AxisIndex>
+         <AxisIndex Value="4">
+            <!-- Logical axis number - 'log_achs_nr' -->
+            <P-CHAN-00035 Value="5" />
+            <!-- Name of axis - 'bezeichnung' -->
+            <P-CHAN-00006 Value="B" />
+		 </AxisIndex>
+         <AxisIndex Value="5">
+            <!-- Logical axis number - 'log_achs_nr' -->
+            <P-CHAN-00035 Value="6" />
+            <!-- Name of axis - 'bezeichnung' -->
+            <P-CHAN-00006 Value="C" />
+		 </AxisIndex>
+	  </GroupIndex>
+   </Group>
+   <ErrorManagement>
+     <ErrorFilter>
+       <ErrorFilterIndex Value="0">
+         <!-- Error number - 'reason' -->
+         <ErrorReason Value="0" />
+         <!-- Action - 'action' -->
+         <ErrorAction Value="NONE" />
+         <!-- Conditional activation - 'conditional_activation' -->
+         <ConditionalActivation Value="0x1" />
+         <!-- Conditional action - 'conditional_action' -->
+         <ConditionalAction Value="HIDE_LOG" />
+         <!-- Conditional parameter - 'conditional_param' -->
+         <ConditionalParam Value="123" />
+         <!-- Conditional output - 'conditional_output' -->
+         <ConditionalOutput Value="filtered" />
+       </ErrorFilterIndex>
+     </ErrorFilter>
+   </ErrorManagement>
+   
+</SDA_MDS>
